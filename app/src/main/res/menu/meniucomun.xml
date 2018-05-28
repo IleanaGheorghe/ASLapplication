@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@mipmap/ic_logout_round"
+        android:title="Log out"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/sett"
+        android:icon="@mipmap/ic_settings_round"
+        android:title="Settings"
+        app:showAsAction="never"
+      />
+    <item
+        android:id="@+id/delAccount"
+        android:title="Delete account" />
+    <item
+        android:id="@+id/itmAbout"
+        android:icon="@mipmap/ic_about_round"
+        android:title="About"
+        app:showAsAction="never"
+     />
+</menu>

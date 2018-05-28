@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ro.ase.eu.aslapplication.LoginActivity"
+    android:background="@drawable/log"
+    >
+
+    <ScrollView
+        android:layout_width="401dp"
+        android:layout_height="533dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="100dp">
+
+            <TextView
+                android:id="@+id/tvNumeAplicatie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soluție de asistență pentru persoanele cu dificultăți de vorbire"
+                android:textAlignment="center"
+                android:textColor="@color/clickButton"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                tools:fontFamily="sans-serif-condensed" />
+
+            <EditText
+                android:id="@+id/etUser"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/edittextstyle"
+                android:drawableLeft="@mipmap/ic_cont2"
+                android:hint="Email"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textCursorDrawable="@null" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittextstyle"
+                android:drawableLeft="@mipmap/ic_pass2"
+                android:gravity=""
+                android:hint="Password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textCursorDrawable="@null" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/buttonstyleselector"
+                android:text="Login"
+                android:textAlignment="center"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/tvCreate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="65dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Not account yet? Create one"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "288967081012",
+    "firebase_url": "https://aslapplication-62ea3.firebaseio.com",
+    "project_id": "aslapplication-62ea3",
+    "storage_bucket": "aslapplication-62ea3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288967081012:android:5e12c354a9cd2f13",
+        "android_client_info": {
+          "package_name": "ro.ase.eu.aslapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288967081012-n58so9411rj5ol6tj4260ebf2ntoctcf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ro.ase.eu.aslapplication",
+            "certificate_hash": "3cfde49411169cf0d23a058cceefc7059469a4b1"
+          }
+        },
+        {
+          "client_id": "288967081012-t55degsipi0ggsbpe197d6l7fv3ak9jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA0RSmubsMips68S9BXLM4dfRodeoOEBE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288967081012-t55degsipi0ggsbpe197d6l7fv3ak9jl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

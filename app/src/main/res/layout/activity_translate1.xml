@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/log"
+    android:orientation="vertical"
+    tools:context="ro.ase.eu.aslapplication.TranslateActivity1">
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="370dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="4dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTranslate"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:text="Translate"
+                android:textAlignment="center"
+                android:textColor="@color/clickButton"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <WebView
+                android:id="@+id/wvTranslate"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_height="65dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/etsignupstyle"
+                    android:hint="Type your message" />
+
+                <Button
+                    android:id="@+id/buttonGo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btnsignstyle"
+                    android:text="Go"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btnSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:padding="16dp"
+                android:src="@mipmap/ic_microphone" />
+
+            <TextView
+                android:id="@+id/textMic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnSpeak"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:text="Tap mic to start" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

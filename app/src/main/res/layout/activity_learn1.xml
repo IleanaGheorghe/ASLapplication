@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/log"
+    android:orientation="vertical"
+    tools:context="ro.ase.eu.aslapplication.LearnActivity1">
+
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="370dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            card_view:cardCornerRadius="4dp">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivAlphabet"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    app:srcCompat="@drawable/alfabet" />
+
+                <TextView
+                    android:id="@+id/tvAlphabet"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/alphabet"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivNumbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    app:srcCompat="@drawable/numbers" />
+
+                <TextView
+                    android:id="@+id/tvNumbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/numbers"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivFruits"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    app:srcCompat="@drawable/fruits" />
+
+                <TextView
+                    android:id="@+id/tvFruits"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/fruits"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                 android:id="@+id/ivVegetables"
+                 android:layout_width="match_parent"
+                 android:layout_height="126dp"
+                 android:layout_marginTop="30dp"
+                 app:srcCompat="@drawable/vegetables" />
+                <TextView
+                    android:id="@+id/tvVegetables"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/vegetables"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/ivFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    app:srcCompat="@drawable/family" />
+                <TextView
+                    android:id="@+id/tvFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/family"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivColors"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    app:srcCompat="@drawable/colors" />
+                <TextView
+                    android:id="@+id/tvColors"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/colors"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+    </ScrollView>
+        </android.support.v7.widget.CardView>
+</LinearLayout>
