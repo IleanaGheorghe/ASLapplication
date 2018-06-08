@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 public class LearnActivity1 extends BaseActivity {
 
-    TextView tvAlphabet, tvNumbers, tvColors,tvFruits,tvVegetables,tvFamily;
-    ImageView ivAlphabet, ivNumbers, ivColors,ivFruits,ivVegetables,ivFamily;
+    TextView tvAlphabet, tvNumbers, tvColors,tvFruits,tvVegetables,tvFamily, tvEmotii, tvLocuri, tvAnimale, tvOrase, tvMancare, tvBauturi;
+    ImageView ivAlphabet, ivNumbers, ivColors,ivFruits,ivVegetables,ivFamily, ivEmotii, ivLocuri, ivAnimale, ivOrase, ivMancare, ivBauturi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,14 @@ public class LearnActivity1 extends BaseActivity {
         tvColors=(TextView)findViewById(R.id.tvColors);
         tvFruits=(TextView)findViewById(R.id.tvFruits);
         tvVegetables=(TextView)findViewById(R.id.tvVegetables);
-        tvFamily=(TextView)findViewById(R.id.tvFamily) ;
+        tvFamily=(TextView)findViewById(R.id.tvFamily);
+        tvEmotii=(TextView) findViewById(R.id.tvEmotii);
+        tvLocuri=(TextView)findViewById(R.id.tvLocuri);
+        tvAnimale=(TextView) findViewById(R.id.tvAnimale);
+        tvOrase=(TextView)findViewById(R.id.tvOrase);
+        tvMancare=(TextView)findViewById(R.id.tvMancare);
+        tvBauturi=(TextView)findViewById(R.id.tvBauturi);
+
 
         ivAlphabet=(ImageView)findViewById(R.id.ivAlphabet);
         ivNumbers=(ImageView)findViewById(R.id.ivNumbers);
@@ -32,6 +39,14 @@ public class LearnActivity1 extends BaseActivity {
         ivFruits=(ImageView)findViewById(R.id.ivFruits);
         ivVegetables=(ImageView)findViewById(R.id.ivVegetables);
         ivFamily=(ImageView)findViewById(R.id.ivFamily);
+        ivEmotii=(ImageView) findViewById(R.id.ivEmotii);
+        ivLocuri=(ImageView)findViewById(R.id.ivLocuri);
+        ivAnimale=(ImageView) findViewById(R.id.ivAnimale);
+        ivOrase=(ImageView)findViewById(R.id.ivOrase);
+        ivMancare=(ImageView)findViewById(R.id.ivMancare);
+        ivBauturi=(ImageView)findViewById(R.id.ivBauturi);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tvAlphabet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +89,139 @@ public class LearnActivity1 extends BaseActivity {
             public void onClick(View v) {
                 Intent intentFamily=new Intent(getApplicationContext(),FamilyActivity.class);
                 startActivity(intentFamily);
+            }
+        });
+
+        tvAnimale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentAnimale=new Intent(getApplicationContext(), AnimaleActivity.class);
+                startActivity(intentAnimale);
+            }
+        });
+
+        tvMancare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMancare=new Intent(getApplicationContext(), MancareActivity.class);
+                startActivity(intentMancare);
+            }
+        });
+
+        tvBauturi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentBauturi=new Intent(getApplicationContext(),BauturiActivity.class);
+                startActivity(intentBauturi);
+            }
+        });
+        tvEmotii.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEmotii=new Intent(getApplicationContext(),EmotiiActivity.class);
+                startActivity(intentEmotii);
+            }
+        });
+        tvOrase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentOrase=new Intent(getApplicationContext(),OraseActivity.class);
+                startActivity(intentOrase);
+            }
+        });
+        tvLocuri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLocuri=new Intent(getApplicationContext(),LocuriActivity.class);
+                startActivity(intentLocuri);
+            }
+        });
+        ivAlphabet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentAlphabet=new Intent(getApplicationContext(),AlphabetActivity.class);
+                startActivity(intentAlphabet);
+            }
+        });
+
+        ivNumbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentNumber=new Intent(getApplicationContext(),NumbersActivity.class);
+                startActivity(intentNumber);
+            }
+        });
+        ivColors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCulori=new Intent(getApplicationContext(),CuloriActivity.class);
+                startActivity(intentCulori);
+            }
+        });
+        ivFruits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentFructe=new Intent(getApplicationContext(),FruitsActivity.class);
+                startActivity(intentFructe);
+            }
+        });
+        ivVegetables.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentVegetables=new Intent(getApplicationContext(),VegetablesActivity.class);
+                startActivity(intentVegetables);
+            }
+        });
+        ivFamily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentFamily=new Intent(getApplicationContext(),FamilyActivity.class);
+                startActivity(intentFamily);
+            }
+        });
+
+        ivAnimale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentAnimale=new Intent(getApplicationContext(), AnimaleActivity.class);
+                startActivity(intentAnimale);
+            }
+        });
+
+        ivMancare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMancare=new Intent(getApplicationContext(), MancareActivity.class);
+                startActivity(intentMancare);
+            }
+        });
+
+        ivBauturi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentBauturi=new Intent(getApplicationContext(),BauturiActivity.class);
+                startActivity(intentBauturi);
+            }
+        });
+        ivEmotii.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEmotii=new Intent(getApplicationContext(),EmotiiActivity.class);
+                startActivity(intentEmotii);
+            }
+        });
+        ivOrase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentOrase=new Intent(getApplicationContext(),OraseActivity.class);
+                startActivity(intentOrase);
+            }
+        });
+        ivLocuri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLocuri=new Intent(getApplicationContext(),LocuriActivity.class);
+                startActivity(intentLocuri);
             }
         });
     }

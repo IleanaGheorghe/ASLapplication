@@ -29,8 +29,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="126dp"
                     android:layout_marginTop="30dp"
+                    android:clickable="true"
                     app:srcCompat="@drawable/alfabet" />
-
                 <TextView
                     android:id="@+id/tvAlphabet"
                     android:layout_width="match_parent"
@@ -48,8 +48,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="126dp"
                     android:layout_marginTop="30dp"
+                    android:clickable="true"
                     app:srcCompat="@drawable/numbers" />
-
                 <TextView
                     android:id="@+id/tvNumbers"
                     android:layout_width="match_parent"
@@ -67,8 +67,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="126dp"
                     android:layout_marginTop="30dp"
+                    android:clickable="true"
                     app:srcCompat="@drawable/fruits" />
-
                 <TextView
                     android:id="@+id/tvFruits"
                     android:layout_width="match_parent"
@@ -86,6 +86,7 @@
                  android:layout_width="match_parent"
                  android:layout_height="126dp"
                  android:layout_marginTop="30dp"
+                    android:clickable="true"
                  app:srcCompat="@drawable/vegetables" />
                 <TextView
                     android:id="@+id/tvVegetables"
@@ -98,11 +99,13 @@
                     android:textColor="@color/clickButton"
                     android:textSize="30sp"
                     android:textStyle="bold" />
+
                 <ImageView
                     android:id="@+id/ivFamily"
                     android:layout_width="match_parent"
                     android:layout_height="126dp"
                     android:layout_marginTop="30dp"
+                    android:clickable="true"
                     app:srcCompat="@drawable/family" />
                 <TextView
                     android:id="@+id/tvFamily"
@@ -121,6 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="126dp"
                     android:layout_marginTop="30dp"
+                    android:clickable="true"
                     app:srcCompat="@drawable/colors" />
                 <TextView
                     android:id="@+id/tvColors"
@@ -134,6 +138,116 @@
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
+                <ImageView
+                    android:id="@+id/ivEmotii"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/emotii" />
+                <TextView
+                    android:id="@+id/tvEmotii"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/emotions"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivAnimale"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/animale" />
+                <TextView
+                    android:id="@+id/tvAnimale"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/animals"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/ivMancare"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/mancare" />
+                <TextView
+                    android:id="@+id/tvMancare"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/food"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/ivLocuri"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/locuri" />
+                <TextView
+                    android:id="@+id/tvLocuri"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/places"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/ivOrase"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/orase" />
+                <TextView
+                    android:id="@+id/tvOrase"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/cities"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/ivBauturi"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_marginTop="30dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/bauturi" />
+                <TextView
+                    android:id="@+id/tvBauturi"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:text="@string/drinks"
+                    android:textAlignment="center"
+                    android:textColor="@color/clickButton"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
             </LinearLayout>
     </ScrollView>
         </android.support.v7.widget.CardView>

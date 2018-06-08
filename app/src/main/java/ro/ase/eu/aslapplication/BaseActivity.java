@@ -49,7 +49,8 @@ public class BaseActivity extends AppCompatActivity {
           UserDelete(LoginActivity.EmailHolder);
         }
         if(id==R.id.itmAbout){
-            Toast.makeText(this,"About is clicked",Toast.LENGTH_LONG).show();
+            Intent intent=new Intent(BaseActivity.this,AboutActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -24,15 +26,86 @@
         <activity android:name=".afterLogActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".CreateaccountActivity" />
-        <activity android:name=".TranslateActivity1" />
-        <activity android:name=".LearnActivity1" />
-        <activity android:name=".AlphabetActivity" />
-        <activity android:name=".NumbersActivity" />
-        <activity android:name=".SettingsAccount" />
-        <activity android:name=".CuloriActivity" />
-        <activity android:name=".FamilyActivity" />
-        <activity android:name=".FruitsActivity" />
-        <activity android:name=".VegetablesActivity"></activity>
+        <activity android:name=".TranslateActivity1">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".afterLogActivity" />
+            />
+        </activity>
+        <activity android:name=".LearnActivity1">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".afterLogActivity" />
+            />
+        </activity>
+        <activity
+            android:name=".AlphabetActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".NumbersActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity android:name=".SettingsAccount">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".afterLogActivity" />
+            />
+        </activity>
+        <activity
+            android:name=".CuloriActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".FamilyActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".FruitsActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".VegetablesActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity android:name=".AboutActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".afterLogActivity" />
+            />
+        </activity>
+        <activity
+            android:name=".EmotiiActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".BauturiActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".MancareActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".OraseActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".LocuriActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity
+            android:name=".AnimaleActivity"
+            android:parentActivityName=".LearnActivity1" />
+        <activity android:name=".GamesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".afterLogActivity" />
+            />
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            android:parentActivityName=".LoginActivity"
+            >
+        </activity>
+        <service
+            android:name=".clase.NotificationService1"
+            android:enabled="true" />
+
+        <receiver android:name=".clase.AlarmReceiver1" />
+
     </application>
 
 </manifest>

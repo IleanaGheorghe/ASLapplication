@@ -30,7 +30,7 @@ import ro.ase.eu.aslapplication.clase.HttpParse;
 public class SettingsAccount extends AppCompatActivity {
 
     String HttpURL = "http://ileanadaniela19.000webhostapp.com/SettingAccount/UpdateAccount.php";
-    String UserInformationURL="http://ileanadaniela19.000webhostapp.com/SettingAccount/UserInformation.php";
+    String UserInformationURL="https://ileanadaniela19.000webhostapp.com/SettingAccount/UserInformation.php";
     String finalResult ;
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
@@ -49,6 +49,7 @@ public class SettingsAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_account);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etNameSetting = (EditText)findViewById(R.id.etNameSetting);
         etEmailSetting = (EditText)findViewById(R.id.etEmailSetting);

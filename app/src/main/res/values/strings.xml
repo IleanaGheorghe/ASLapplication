@@ -5,15 +5,34 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="error_message">Empty field!</string>
-    <string name="error_password">Password incorrect</string>
-    <string name="learn">Learn</string>
-    <string name="translate">Translate</string>
-    <string name="alphabet">Alphabet</string>
-    <string name="numbers">Numbers</string>
-    <string name="fruits">Fruits</string>
-    <string name="vegetables">Vegetables</string>
-    <string name="family">Family</string>
-    <string name="colors">Colors</string>
+    <string name="action_settings">Setări</string>
+    <string name="error_message">Câmp incomplet/gol</string>
+    <string name="error_password">Parola incorectă</string>
+    <string name="learn">Învață</string>
+    <string name="translate">Dicționar</string>
+    <string name="games">Testeză-ți cunoștințele</string>
+    <string name="alphabet">Alfabet</string>
+    <string name="numbers">Numere</string>
+    <string name="fruits">Fructe</string>
+    <string name="vegetables">Legume</string>
+    <string name="family">Familie</string>
+    <string name="colors">Culori</string>
+    <string name="emotions">Emoții</string>
+    <string name="animals">Animale</string>
+    <string name="places">Locuri</string>
+    <string name="food">Mâncare</string>
+    <string name="cities">Orașe</string>
+    <string name="drinks">Băuturi</string>
+    <string name="about">About</string>
+    <string name="textPrezentare">Salut, numele meu este Ileana Daniela Gheorghe. Sunt studentă în anul III la Facultatea de Cibernetică, Statistică și Informatică Economică,
+        specializarea Informatică Economică, și aceasta este lucrarea mea de licență.
+    </string>
+    <string name="textMotivatie">Am decis să creez o aplicație mobilă de tip m-learning, cu care scopul meu a fost să ajut la învățarea limbajului mimico-gestual cu o
+        aplicație simplă și ușor de folosit de către toate persoanele.
+    </string>
+    <string name="textDezvoltare">Versiunea curentă a aplicației este într-o formă de bază și folosește limbajul semnelor pentru limba română.
+    </string>
+    <string name="textSursa">Pentru a vedea codul sursă puteți accesa: https://github.com/IleanaGheorghe/ASLapplication
+    </string>
+    <string name="textview">TextView</string>
 </resources>

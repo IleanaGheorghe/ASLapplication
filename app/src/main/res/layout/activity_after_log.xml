@@ -15,6 +15,9 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         card_view:cardCornerRadius="4dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:layout_marginTop="30dp"
+                android:clickable="true"
                 app:srcCompat="@drawable/learn2" />
 
             <TextView
@@ -40,10 +44,30 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/ivGames"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                app:srcCompat="@drawable/games" />
+
+            <TextView
+                android:id="@+id/tvGames"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:text="@string/games"
+                android:textAlignment="center"
+                android:textColor="@color/clickButton"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <ImageView
                 android:id="@+id/ivTranslate"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
                 android:layout_marginTop="30dp"
+                android:clickable="true"
                 app:srcCompat="@drawable/translate" />
 
             <TextView
@@ -58,5 +82,6 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
+        </ScrollView>
     </android.support.v7.widget.CardView>
 </LinearLayout>

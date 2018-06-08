@@ -25,7 +25,7 @@ import java.net.URL;
 
 public class AlphabetActivity extends BaseActivity {
 
-    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/getAllImagesAlphabet.php";
+    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/alphabet/getAllImagesAlphabet.php";
     Button btnFetch, btnNext,btnPrev;
     ImageView imageView;
     private String imagesJSON;
@@ -47,13 +47,9 @@ public class AlphabetActivity extends BaseActivity {
         btnPrev=(Button)findViewById(R.id.buttonPrev);
         imageView=(ImageView)findViewById(R.id.ivNr);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getAllImages();
-        /*btnFetch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getAllImages();
-            }
-        });*/
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,17 +100,17 @@ public class AlphabetActivity extends BaseActivity {
 
     private void getAllImages() {
         class GetAllImages extends AsyncTask<String,Void,String>{
-            //ProgressDialog loading;
+            ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                //loading = ProgressDialog.show(AlphabetActivity.this, "Fetching Data...","Please Wait...",true,true);
+                loading = ProgressDialog.show(AlphabetActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                //loading.dismiss();
+                loading.dismiss();
                 imagesJSON = s;
                 extractJSON();
                 showImage();
@@ -149,7 +145,6 @@ public class AlphabetActivity extends BaseActivity {
 
     private void getImage(String urlToImage){
         class GetImage extends AsyncTask<String,Void,Bitmap>{
-            //ProgressDialog loading;
             @Override
             protected Bitmap doInBackground(String... params) {
                 URL url = null;
@@ -170,13 +165,12 @@ public class AlphabetActivity extends BaseActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                //loading = ProgressDialog.show(AlphabetActivity.this,"Downloading Image...","Please wait...",true,true);
+
             }
 
             @Override
             protected void onPostExecute(Bitmap bitmap) {
                 super.onPostExecute(bitmap);
-                //loading.dismiss();
                 imageView.setImageBitmap(bitmap);
             }
         }

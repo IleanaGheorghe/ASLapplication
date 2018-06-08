@@ -1,5 +1,6 @@
 package ro.ase.eu.aslapplication;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,9 +24,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FamilyActivity extends AppCompatActivity {
+public class FamilyActivity extends BaseActivity {
 
-    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/getFamilie.php";
+    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Familie/getFamilie.php";
     Button btnNext,btnPrev;
     WebView webView;
     TextView textView;
@@ -52,6 +53,8 @@ public class FamilyActivity extends AppCompatActivity {
         webView.setBackgroundColor(Color.WHITE);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getAllImages();
         btnPrev.setOnClickListener(new View.OnClickListener() {
@@ -105,14 +108,17 @@ public class FamilyActivity extends AppCompatActivity {
 
     private void getAllImages() {
         class GetAllImages extends AsyncTask<String,Void,String> {
+            ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
+                loading = ProgressDialog.show(FamilyActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
+                loading.dismiss();
                 imagesJSON = s;
                 extractJSON();
                 showImage();

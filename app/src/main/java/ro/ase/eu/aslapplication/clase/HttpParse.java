@@ -76,6 +76,7 @@ public class HttpParse {
             return FinalHttpData;
         }
 
+
         public String FinalDataParse(HashMap<String,String> hashMap2) throws UnsupportedEncodingException {
 
             for(Map.Entry<String,String> map_entry : hashMap2.entrySet()){
@@ -94,4 +95,6 @@ public class HttpParse {
 
             return Result ;
         }
+
+
 }
