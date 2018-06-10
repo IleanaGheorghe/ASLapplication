@@ -4,12 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -27,11 +30,13 @@ public class NumbersActivity extends BaseActivity {
 
     private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/numbers/getAllImagesNumbers.php";
     Button  btnNext,btnPrev;
-    ImageView imageView;
+    WebView imageView;
+    TextView tvNumbers;
     private String imagesJSON;
 
     private static final String JSON_ARRAY ="result";
     private static final String IMAGE_URL = "url";
+    private static final String IMAGE_NAME="nume";
 
     private JSONArray arrayImages= null;
 
@@ -45,7 +50,12 @@ public class NumbersActivity extends BaseActivity {
 
         btnNext=(Button) findViewById(R.id.buttonNext);
         btnPrev=(Button)findViewById(R.id.buttonPrev);
-        imageView=(ImageView)findViewById(R.id.ivNr);
+        imageView=(WebView) findViewById(R.id.ivNr);
+        tvNumbers=(TextView)findViewById(R.id.tvNumbers);
+
+        imageView.setBackgroundColor(Color.WHITE);
+        imageView.getSettings().setLoadWithOverviewMode(true);
+        imageView.getSettings().setUseWideViewPort(true);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -76,7 +86,8 @@ public class NumbersActivity extends BaseActivity {
     private void showImage(){
         try {
             JSONObject jsonObject = arrayImages.getJSONObject(TRACK);
-            getImage(jsonObject.getString(IMAGE_URL));
+            imageView.loadUrl(jsonObject.getString(IMAGE_URL));
+            tvNumbers.setText(jsonObject.getString(IMAGE_NAME).toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -97,9 +108,8 @@ public class NumbersActivity extends BaseActivity {
     }
 
 
-
     private void getAllImages() {
-        class GetAllImages extends AsyncTask<String,Void,String>{
+        class GetAllImages extends AsyncTask<String,Void,String> {
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
@@ -141,39 +151,5 @@ public class NumbersActivity extends BaseActivity {
         }
         GetAllImages gai = new GetAllImages();
         gai.execute(IMAGES_URL);
-    }
-
-    private void getImage(String urlToImage){
-        class GetImage extends AsyncTask<String,Void,Bitmap>{
-            @Override
-            protected Bitmap doInBackground(String... params) {
-                URL url = null;
-                Bitmap image = null;
-
-                String urlToImage = params[0];
-                try {
-                    url = new URL(urlToImage);
-                    image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return image;
-            }
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                super.onPostExecute(bitmap);
-                imageView.setImageBitmap(bitmap);
-            }
-        }
-        GetImage gi = new GetImage();
-        gi.execute(urlToImage);
     }
 }

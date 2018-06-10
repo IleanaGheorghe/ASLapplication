@@ -20,11 +20,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/ivNr"
+            <TextView
+                android:id="@+id/tvAlf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/clickButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <WebView
+                android:id="@+id/wvAlf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"/>
 
             <LinearLayout
                 android:orientation="horizontal"

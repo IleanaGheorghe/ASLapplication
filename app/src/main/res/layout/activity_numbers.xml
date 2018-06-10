@@ -20,11 +20,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
+                android:id="@+id/tvNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/clickButton"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <WebView
                 android:id="@+id/ivNr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_centerVertical="true"/>
 
             <LinearLayout
                 android:orientation="horizontal"

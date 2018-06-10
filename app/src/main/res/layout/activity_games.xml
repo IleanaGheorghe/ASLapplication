@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/log"
+    android:orientation="vertical"
     tools:context="ro.ase.eu.aslapplication.GamesActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="370dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="4dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+          <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+              android:layout_gravity="center">
+
+
+              <TextView
+                  android:id="@+id/tvUsor"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/textUsor"
+                  android:layout_marginTop="20dp"
+                  android:textAlignment="center"
+                  android:textSize="14sp"
+                  android:textStyle="bold"/>
+
+              <Spinner
+                  android:id="@+id/spinnerCategory"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/btnUsor"
+                  android:layout_marginLeft="30dp"
+                  android:layout_marginRight="30dp"
+                  android:layout_marginTop="16dp" />
+
+              <Button
+                  android:id="@+id/btnUsor"
+                  android:layout_width="270dp"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/btnsignstyle"
+                  android:layout_gravity="center"
+                  android:text="@string/buttonUsor"
+                  android:layout_marginTop="20dp"
+                  android:textColor="#ffff" />
+
+
+
+              <TextView
+                  android:id="@+id/tvGreu"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/textGreu"
+                  android:layout_marginTop="20dp"
+                  android:textAlignment="center"
+                  android:textSize="14sp"
+                  android:textStyle="bold"/>
+
+              <Button
+                  android:id="@+id/btnGreu"
+                  android:layout_width="270dp"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="20dp"
+                  android:background="@drawable/btnsignstyle"
+                  android:text="@string/buttonGreu"
+                  android:textColor="#ffff" />
+
+          </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+

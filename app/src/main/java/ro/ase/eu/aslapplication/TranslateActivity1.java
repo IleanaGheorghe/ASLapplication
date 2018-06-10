@@ -1,16 +1,22 @@
 package ro.ase.eu.aslapplication;
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.Image;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.webkit.DownloadListener;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +29,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
@@ -42,7 +49,7 @@ public class TranslateActivity1 extends BaseActivity {
 
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
-    String nume,urlImagine;
+    public static String nume,urlImagine;
     String parseResult;
     HashMap<String,String> resultHash=new HashMap<>();
 
@@ -57,6 +64,7 @@ public class TranslateActivity1 extends BaseActivity {
         Intent intent=getIntent();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         tvTranslate=(TextView)findViewById(R.id.tvTranslate);
         wvTranslate=(WebView) findViewById(R.id.wvTranslate);
@@ -83,6 +91,43 @@ public class TranslateActivity1 extends BaseActivity {
                 getSearchExpression(text);
             }
         });
+
+        /*wvTranslate.setDownloadListener(new DownloadListener()
+        {
+            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength)
+            {
+                //for downloading directly through download manager
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "download");
+                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                dm.enqueue(request);
+            }
+        });*/
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_share, menu);
+        getMenuInflater().inflate(R.menu.meniucomun, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.share) {
+            shareNews();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    private void shareNews() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, urlImagine);
+        startActivity(Intent.createChooser(shareIntent,String.valueOf("How do you want to share")));
     }
 
     private void startVoiceInput() {
@@ -181,7 +226,7 @@ public class TranslateActivity1 extends BaseActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            tvTranslate.setText("Cuvantul zilei este : " +nume);
+            tvTranslate.setText(nume);
             wvTranslate.loadUrl(urlImagine);
         }
     }

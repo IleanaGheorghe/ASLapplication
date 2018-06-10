@@ -1,11 +1,19 @@
 package ro.ase.eu.aslapplication;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -14,54 +22,76 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Random;
 
+import ro.ase.eu.aslapplication.clase.AlarmReceiver1;
 import ro.ase.eu.aslapplication.clase.HttpParse;
 import ro.ase.eu.aslapplication.clase.NotificationService1;
 
 public class NotificationActivity extends AppCompatActivity {
-    private static final String SEARCH_URL="https://ileanadaniela19.000webhostapp.com/Notificari/getExpresieRandom.php";
-    Random r = new Random();
-    int id = r.nextInt(207 - 1) + 1;
+    private static final String SEARCH_URL="https://ileanadaniela19.000webhostapp.com/Notificari/random.php";
 
-    HashMap<String,String> hashMap = new HashMap<>();
-    HttpParse httpParse = new HttpParse();
     public static String nume,urlImagine;
-    String parseResult;
-    HashMap<String,String> resultHash=new HashMap<>();
-
-    String finalResultJSON;
 
     TextView tvNotificare;
     WebView wvNotificare;
+
+    private static final String JSON_ARRAY ="result";
+    private static final String IMAGE_URL = "url";
+    private static final String IMAGE_NAME="nume";
+
+    private JSONArray arrayImages= null;
+    private String imagesJSON;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
 
+        getAllImages();
         Intent intent=getIntent();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tvNotificare=(TextView) findViewById(R.id.tvNotificare);
         wvNotificare=(WebView) findViewById(R.id.wvNotificare);
+        wvNotificare.setBackgroundColor(Color.WHITE);
+        wvNotificare.getSettings().setLoadWithOverviewMode(true);
+        wvNotificare.getSettings().setUseWideViewPort(true);
 
-        getSearchExpression(id);
+
     }
 
-    private void getSearchExpression(final int id){
-        class GetSearchExpression extends AsyncTask<String,Void,String> {
+    private void extractJSON(){
+        try {
+            JSONObject jsonObject = new JSONObject(imagesJSON);
+            arrayImages = jsonObject.getJSONArray(JSON_ARRAY);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    private void showImage(){
+        try {
+            JSONObject jsonObject = arrayImages.getJSONObject(0);
+            nume=jsonObject.getString(IMAGE_URL);
+            urlImagine=jsonObject.getString(IMAGE_NAME).toString();
+            wvNotificare.loadUrl(nume);
+            tvNotificare.setText("Cuvântul zilei este : " +urlImagine);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
+
+
+    private void getAllImages() {
+        class GetAllImages extends AsyncTask<String,Void,String> {
             ProgressDialog loading;
-
-            @Override
-            protected String doInBackground(String... strings) {
-                resultHash.put("id", String.valueOf(strings[0]));
-                parseResult = httpParse.postRequest(resultHash,SEARCH_URL);
-                return parseResult;
-            }
-
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -69,59 +99,38 @@ public class NotificationActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onPostExecute(String httpResponseMsg) {
-                super.onPostExecute(httpResponseMsg);
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
                 loading.dismiss();
-
-                finalResultJSON=httpResponseMsg;
-                new NotificationActivity.GetHttpResponse(NotificationActivity.this).execute();
+                imagesJSON = s;
+                extractJSON();
+                showImage();
             }
-        }
-        GetSearchExpression gse=new GetSearchExpression();
-        gse.execute(String.valueOf(id));
-    }
 
-    private class GetHttpResponse extends AsyncTask<Void,Void,Void>{
-        public Context context;
+            @Override
+            protected String doInBackground(String... params) {
+                String uri = params[0];
+                BufferedReader bufferedReader = null;
+                try {
+                    URL url = new URL(uri);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
 
-        public GetHttpResponse(Context context) {
-            this.context = context;
-        }
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-        @Override
-        protected Void doInBackground(Void... voids) {
-            try {
-
-                if (finalResultJSON != null) {
-                    JSONArray jsonArray = null;
-                    try {
-                        jsonArray = new JSONArray(finalResultJSON);
-                        JSONObject jsonObject;
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            jsonObject = jsonArray.getJSONObject(i);
-                            nume = jsonObject.getString("nume").toString();
-                            urlImagine = jsonObject.getString("path").toString();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                    String json;
+                    while((json = bufferedReader.readLine())!= null){
+                        sb.append(json+"\n");
                     }
+
+                    return sb.toString().trim();
+
+                }catch(Exception e){
+                    return null;
                 }
-            }catch(Exception e){
-                e.printStackTrace();
             }
-            return null;
         }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            tvNotificare.setText(nume);
-            wvNotificare.loadUrl(urlImagine);
-        }
+        GetAllImages gai = new GetAllImages();
+        gai.execute(SEARCH_URL);
     }
 }

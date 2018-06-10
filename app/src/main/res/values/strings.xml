@@ -24,6 +24,15 @@
     <string name="cities">Orașe</string>
     <string name="drinks">Băuturi</string>
     <string name="about">About</string>
+
+    <string name="buttonUsor">Start quiz nivel incepator</string>
+    <string name="buttonGreu">Start quiz nivel avansat</string>
+
+    <string name="textUsor">Acest nivel conține quiz-uri din categoriile : alfabet și litere, mâncare, fructe, legume, culori, familie, locuri, băuturi.
+    Alegeți categoria :
+    </string>
+    <string name="textGreu">Acest nivel contine întrebări din toate categoriile existente și expresiile din dicționar.</string>
+
     <string name="textPrezentare">Salut, numele meu este Ileana Daniela Gheorghe. Sunt studentă în anul III la Facultatea de Cibernetică, Statistică și Informatică Economică,
         specializarea Informatică Economică, și aceasta este lucrarea mea de licență.
     </string>

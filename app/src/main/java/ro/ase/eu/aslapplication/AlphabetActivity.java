@@ -4,12 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -26,12 +29,14 @@ import java.net.URL;
 public class AlphabetActivity extends BaseActivity {
 
     private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/alphabet/getAllImagesAlphabet.php";
-    Button btnFetch, btnNext,btnPrev;
-    ImageView imageView;
+    Button  btnNext,btnPrev;
+    WebView imageView;
+    TextView tvAlf;
     private String imagesJSON;
 
     private static final String JSON_ARRAY ="result";
     private static final String IMAGE_URL = "url";
+    private static final String IMAGE_NAME="nume";
 
     private JSONArray arrayImages= null;
 
@@ -40,16 +45,22 @@ public class AlphabetActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.activity_alphabet);
         Intent intent=getIntent();
 
+        tvAlf=(TextView) findViewById(R.id.tvAlf);
         btnNext=(Button) findViewById(R.id.buttonNext);
         btnPrev=(Button)findViewById(R.id.buttonPrev);
-        imageView=(ImageView)findViewById(R.id.ivNr);
+        imageView=(WebView) findViewById(R.id.wvAlf);
+
+        imageView.setBackgroundColor(Color.WHITE);
+        imageView.getSettings().setLoadWithOverviewMode(true);
+        imageView.getSettings().setUseWideViewPort(true);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getAllImages();
+
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +87,8 @@ public class AlphabetActivity extends BaseActivity {
     private void showImage(){
         try {
             JSONObject jsonObject = arrayImages.getJSONObject(TRACK);
-            getImage(jsonObject.getString(IMAGE_URL));
+            imageView.loadUrl(jsonObject.getString(IMAGE_URL).toString());
+            tvAlf.setText(jsonObject.getString(IMAGE_NAME).toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -97,9 +109,8 @@ public class AlphabetActivity extends BaseActivity {
     }
 
 
-
     private void getAllImages() {
-        class GetAllImages extends AsyncTask<String,Void,String>{
+        class GetAllImages extends AsyncTask<String,Void,String> {
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
@@ -141,40 +152,5 @@ public class AlphabetActivity extends BaseActivity {
         }
         GetAllImages gai = new GetAllImages();
         gai.execute(IMAGES_URL);
-    }
-
-    private void getImage(String urlToImage){
-        class GetImage extends AsyncTask<String,Void,Bitmap>{
-            @Override
-            protected Bitmap doInBackground(String... params) {
-                URL url = null;
-                Bitmap image = null;
-
-                String urlToImage = params[0];
-                try {
-                    url = new URL(urlToImage);
-                    image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return image;
-            }
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                super.onPostExecute(bitmap);
-                imageView.setImageBitmap(bitmap);
-            }
-        }
-        GetImage gi = new GetImage();
-        gi.execute(urlToImage);
     }
 }

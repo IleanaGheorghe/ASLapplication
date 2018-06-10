@@ -3,14 +3,12 @@ package ro.ase.eu.aslapplication;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
 
+
     private PendingIntent pendingIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +50,11 @@ public class LoginActivity extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance();
 
-     // we can set time by open date and time picker dialog
-
-        calendar.set(Calendar.HOUR_OF_DAY, 00);
-        calendar.set(Calendar.MINUTE, 53);
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
+        calendar.set(Calendar.MINUTE, 9);
         calendar.set(Calendar.SECOND, 0);
 
-        Intent intent1 = new Intent(LoginActivity.this, AlarmReceiver1.class);
+        Intent intent1 = new Intent(LoginActivity.this,AlarmReceiver1.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
                 LoginActivity.this, 0, intent1,
                 PendingIntent.FLAG_UPDATE_CURRENT);
