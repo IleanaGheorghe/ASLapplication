@@ -62,7 +62,7 @@ public class GamesActivity extends BaseActivity {
         btnGreu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGreu=new Intent(getApplicationContext(), NivelUsorActivity.class);
+                Intent intentGreu=new Intent(getApplicationContext(), QuizAvansatActivity.class);
                 startActivity(intentGreu);
             }
         });
