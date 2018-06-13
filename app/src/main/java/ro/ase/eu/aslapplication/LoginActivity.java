@@ -5,10 +5,12 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,22 +50,22 @@ public class LoginActivity extends AppCompatActivity {
         btnLog=(Button)findViewById(R.id.btnLogin);
         tvCreate=(TextView)findViewById(R.id.tvCreate);
 
-        Calendar calendar = Calendar.getInstance();
+        long t=System.currentTimeMillis();
+        Calendar alarmStartTime = Calendar.getInstance();
+        alarmStartTime.set(Calendar.HOUR_OF_DAY, 8);
+        alarmStartTime.set(Calendar.MINUTE, 00);
+        alarmStartTime.set(Calendar.SECOND, 0);
 
-        calendar.set(Calendar.HOUR_OF_DAY, 10);
-        calendar.set(Calendar.MINUTE, 9);
-        calendar.set(Calendar.SECOND, 0);
+        if(t<=alarmStartTime.getTimeInMillis()) {
+            AlarmManager alarmManager = (AlarmManager) getSystemService(LoginActivity.this.ALARM_SERVICE);
+            Intent alarmIntent = new Intent(LoginActivity.this, AlarmReceiver1.class);
 
-        Intent intent1 = new Intent(LoginActivity.this,AlarmReceiver1.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                LoginActivity.this, 0, intent1,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager am = (AlarmManager) LoginActivity.this
-                .getSystemService(LoginActivity.this.ALARM_SERVICE);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                AlarmManager.INTERVAL_DAY, pendingIntent);
+            pendingIntent = PendingIntent.getBroadcast(LoginActivity.this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
+            alarmManager.set(AlarmManager.RTC_WAKEUP,alarmStartTime.getTimeInMillis(),pendingIntent);
+            //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 
+        }
         btnLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     public void CheckEditTextIsEmptyOrNot(){
 
         EmailHolder = etUser.getText().toString();

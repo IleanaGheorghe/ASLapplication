@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/log"
     android:orientation="vertical"
-    tools:context="ro.ase.eu.aslapplication.FamilyActivity">
+    tools:context="ro.ase.eu.aslapplication.activitatiCategorii.FamilyActivity">
 
 
 

@@ -1,12 +1,9 @@
-package ro.ase.eu.aslapplication;
+package ro.ase.eu.aslapplication.activitatiCategorii;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -18,17 +15,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CuloriActivity extends BaseActivity {
-    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Culori/getCulori.php";
-    Button btnNext,btnPrev;
-    WebView webView;
-    TextView textView;
+import ro.ase.eu.aslapplication.BaseActivity;
+import ro.ase.eu.aslapplication.R;
+
+public class NumbersActivity extends BaseActivity {
+
+    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/numbers/getAllImagesNumbers.php";
+    Button  btnNext,btnPrev;
+    WebView imageView;
+    TextView tvNumbers;
     private String imagesJSON;
 
     private static final String JSON_ARRAY ="result";
@@ -36,22 +35,23 @@ public class CuloriActivity extends BaseActivity {
     private static final String IMAGE_NAME="nume";
 
     private JSONArray arrayImages= null;
+
     private int TRACK = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_culori);
+        setContentView(R.layout.activity_numbers);
         Intent intent=getIntent();
 
         btnNext=(Button) findViewById(R.id.buttonNext);
         btnPrev=(Button)findViewById(R.id.buttonPrev);
-        webView=(WebView) findViewById(R.id.wvCulori);
-        textView=(TextView)findViewById(R.id.tvCulori);
+        imageView=(WebView) findViewById(R.id.ivNr);
+        tvNumbers=(TextView)findViewById(R.id.tvNumbers);
 
-        webView.setBackgroundColor(Color.WHITE);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
+        imageView.setBackgroundColor(Color.WHITE);
+        imageView.getSettings().setLoadWithOverviewMode(true);
+        imageView.getSettings().setUseWideViewPort(true);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -82,8 +82,8 @@ public class CuloriActivity extends BaseActivity {
     private void showImage(){
         try {
             JSONObject jsonObject = arrayImages.getJSONObject(TRACK);
-            webView.loadUrl(jsonObject.getString(IMAGE_URL));
-            textView.setText(jsonObject.getString(IMAGE_NAME).toString());
+            imageView.loadUrl(jsonObject.getString(IMAGE_URL));
+            tvNumbers.setText(jsonObject.getString(IMAGE_NAME).toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -104,13 +104,13 @@ public class CuloriActivity extends BaseActivity {
     }
 
 
-
     private void getAllImages() {
         class GetAllImages extends AsyncTask<String,Void,String> {
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
-                super.onPreExecute();loading = ProgressDialog.show(CuloriActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
+                super.onPreExecute();
+                loading = ProgressDialog.show(NumbersActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
 
             @Override

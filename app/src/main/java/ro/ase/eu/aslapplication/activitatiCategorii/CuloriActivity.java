@@ -1,10 +1,9 @@
-package ro.ase.eu.aslapplication;
+package ro.ase.eu.aslapplication.activitatiCategorii;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -20,9 +19,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class BauturiActivity extends BaseActivity {
+import ro.ase.eu.aslapplication.BaseActivity;
+import ro.ase.eu.aslapplication.R;
 
-    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Bauturi/getBauturi.php";
+public class CuloriActivity extends BaseActivity {
+    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Culori/getCulori.php";
     Button btnNext,btnPrev;
     WebView webView;
     TextView textView;
@@ -38,14 +39,13 @@ public class BauturiActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bauturi);
-
+        setContentView(R.layout.activity_culori);
         Intent intent=getIntent();
 
         btnNext=(Button) findViewById(R.id.buttonNext);
         btnPrev=(Button)findViewById(R.id.buttonPrev);
-        webView=(WebView) findViewById(R.id.wvBauturiA);
-        textView=(TextView)findViewById(R.id.tvBauturiA);
+        webView=(WebView) findViewById(R.id.wvCulori);
+        textView=(TextView)findViewById(R.id.tvCulori);
 
         webView.setBackgroundColor(Color.WHITE);
         webView.getSettings().setLoadWithOverviewMode(true);
@@ -54,7 +54,6 @@ public class BauturiActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getAllImages();
-
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,8 +108,7 @@ public class BauturiActivity extends BaseActivity {
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(BauturiActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
+                super.onPreExecute();loading = ProgressDialog.show(CuloriActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
 
             @Override

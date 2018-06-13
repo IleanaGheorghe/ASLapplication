@@ -1,37 +1,22 @@
 package ro.ase.eu.aslapplication;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.webkit.WebView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Random;
-
-import ro.ase.eu.aslapplication.clase.AlarmReceiver1;
-import ro.ase.eu.aslapplication.clase.HttpParse;
-import ro.ase.eu.aslapplication.clase.NotificationService1;
 
 public class NotificationActivity extends AppCompatActivity {
     private static final String SEARCH_URL="https://ileanadaniela19.000webhostapp.com/Notificari/random.php";

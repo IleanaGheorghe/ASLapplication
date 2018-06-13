@@ -6,7 +6,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +24,7 @@ import java.util.Locale;
 import ro.ase.eu.aslapplication.intrebariQuiz.Question;
 import ro.ase.eu.aslapplication.intrebariQuiz.QuizDbHelper;
 
-public class QuizCategoryActivity extends AppCompatActivity {
+public class QuizCategoryActivity extends BaseActivity {
 
     public static final String EXTRA_SCORE = "extraScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;
@@ -95,7 +94,7 @@ public class QuizCategoryActivity extends AppCompatActivity {
 
         String category = intent.getStringExtra(GamesActivity.EXTRA_CATEGORY);
 
-        textViewCategory.setText("Category: " + category);
+        textViewCategory.setText("Categorie : " + category);
 
 
         if (savedInstanceState == null) {

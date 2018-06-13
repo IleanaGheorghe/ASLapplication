@@ -20,4 +20,14 @@ public final class QuizContract {
         public static final String COLUMN_ULRIMAGE = "url_imagine";
         public static final String COLUMN_CATEGORY = "category";
     }
+
+    public static class Questions2Table implements BaseColumns{
+        public static final String TABLE_NAME2="quiz_gif";
+        public static final String COLUMN_QUESTION = "question2";
+        public static final String COLUMN_OPTION1 = "option12";
+        public static final String COLUMN_OPTION2 = "option22";
+        public static final String COLUMN_OPTION3 = "option32";
+        public static final String COLUMN_OPTION4="option42";
+        public static final String COLUMN_ANSWER_NR = "answer_nr";
+    }
 }

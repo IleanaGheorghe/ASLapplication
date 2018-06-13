@@ -1,10 +1,9 @@
-package ro.ase.eu.aslapplication;
+package ro.ase.eu.aslapplication.activitatiCategorii;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -20,9 +19,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class LocuriActivity extends BaseActivity {
+import ro.ase.eu.aslapplication.BaseActivity;
+import ro.ase.eu.aslapplication.R;
 
-    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Locuri/getLocuri.php";
+public class FamilyActivity extends BaseActivity {
+
+    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Familie/getFamilie.php";
     Button btnNext,btnPrev;
     WebView webView;
     TextView textView;
@@ -38,13 +40,13 @@ public class LocuriActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_locuri);
+        setContentView(R.layout.activity_family);
         Intent intent=getIntent();
 
         btnNext=(Button) findViewById(R.id.buttonNext);
         btnPrev=(Button)findViewById(R.id.buttonPrev);
-        webView=(WebView) findViewById(R.id.wvLocuriA);
-        textView=(TextView)findViewById(R.id.tvLocuriA);
+        webView=(WebView) findViewById(R.id.wvFamily2);
+        textView=(TextView)findViewById(R.id.tvFamily2);
 
         webView.setBackgroundColor(Color.WHITE);
         webView.getSettings().setLoadWithOverviewMode(true);
@@ -108,7 +110,7 @@ public class LocuriActivity extends BaseActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(LocuriActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
+                loading = ProgressDialog.show(FamilyActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
 
             @Override

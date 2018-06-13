@@ -1,26 +1,22 @@
 package ro.ase.eu.aslapplication.clase;
 
-import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-
 import android.os.IBinder;
 
 import ro.ase.eu.aslapplication.LoginActivity;
-import ro.ase.eu.aslapplication.NotificationActivity;
 import ro.ase.eu.aslapplication.R;
 
 /**
- * Created by Ileana Gheorghe on 6/8/2018.
+ * Created by Ileana Gheorghe on 6/12/2018.
  */
 
-public class NotificationService1 extends Service {
-    private NotificationManager mManager;
+public class AlarmService1 extends Service {
 
+    private NotificationManager mManager;
     @Override
     public IBinder onBind(Intent arg0)
     {
@@ -39,11 +35,12 @@ public class NotificationService1 extends Service {
     {
         super.onStart(intent, startId);
         mManager = (NotificationManager) this.getApplicationContext().getSystemService(this.getApplicationContext().NOTIFICATION_SERVICE);
-        Intent intent1 = new Intent(this.getApplicationContext(),NotificationActivity.class);
-        Notification notification = new Notification(R.drawable.ic_notif,"A new notification", System.currentTimeMillis());
+        Intent intent1 = new Intent(this.getApplicationContext(),LoginActivity.class);
+        Notification notification = new Notification(R.drawable.ic_notif,"This is a test message!", System.currentTimeMillis());
         intent1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP| Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingNotificationIntent = PendingIntent.getActivity( this.getApplicationContext(),0, intent1,PendingIntent.FLAG_UPDATE_CURRENT);
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
+        //notification.setLatestEventInfo(this.getApplicationContext(), "Daily Notification Demo", "This is a test message!", pendingNotificationIntent);
         mManager.notify(0, notification);
     }
     @Override
@@ -52,4 +49,5 @@ public class NotificationService1 extends Service {
         // TODO Auto-generated method stub
         super.onDestroy();
     }
+
 }

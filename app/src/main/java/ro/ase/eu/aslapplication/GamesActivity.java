@@ -20,15 +20,12 @@ public class GamesActivity extends BaseActivity {
     private static final int REQUEST_CODE_QUIZ = 1;
     public static final String EXTRA_CATEGORY = "extraCategory";
 
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String KEY_HIGHSCORE = "keyHighscore";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_games);
 
-        Intent intent=getIntent();
+        final Intent intent=getIntent();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -40,10 +37,10 @@ public class GamesActivity extends BaseActivity {
 
         spinnerCategory=(Spinner)findViewById(R.id.spinnerCategory);
 
-        String[] difficultyLevels = Question.getAllCategory();
+        String[] categoryLevels = Question.getAllCategory();
 
         ArrayAdapter<String> adapterDifficulty = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, difficultyLevels);
+                android.R.layout.simple_spinner_item, categoryLevels);
         adapterDifficulty.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(adapterDifficulty);
 
@@ -62,7 +59,8 @@ public class GamesActivity extends BaseActivity {
         btnGreu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentGreu=new Intent(getApplicationContext(), QuizAvansatActivity.class);
+                Intent intentGreu=new Intent(GamesActivity.this, QuizAvansatActivity.class);
+                intentGreu.putExtra(EXTRA_CATEGORY, "Toate categoriile");
                 startActivity(intentGreu);
             }
         });

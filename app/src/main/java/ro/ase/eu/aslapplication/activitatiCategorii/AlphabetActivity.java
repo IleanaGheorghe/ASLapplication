@@ -1,12 +1,9 @@
-package ro.ase.eu.aslapplication;
+package ro.ase.eu.aslapplication.activitatiCategorii;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -18,18 +15,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FamilyActivity extends BaseActivity {
+import ro.ase.eu.aslapplication.BaseActivity;
+import ro.ase.eu.aslapplication.R;
 
-    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/Familie/getFamilie.php";
-    Button btnNext,btnPrev;
-    WebView webView;
-    TextView textView;
+public class AlphabetActivity extends BaseActivity {
+
+    private static final String IMAGES_URL="http://ileanadaniela19.000webhostapp.com/alphabet/getAllImagesAlphabet.php";
+    Button  btnNext,btnPrev;
+    WebView imageView;
+    TextView tvAlf;
     private String imagesJSON;
 
     private static final String JSON_ARRAY ="result";
@@ -37,26 +35,28 @@ public class FamilyActivity extends BaseActivity {
     private static final String IMAGE_NAME="nume";
 
     private JSONArray arrayImages= null;
+
     private int TRACK = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family);
+        setContentView(R.layout.activity_alphabet);
         Intent intent=getIntent();
 
+        tvAlf=(TextView) findViewById(R.id.tvAlf);
         btnNext=(Button) findViewById(R.id.buttonNext);
         btnPrev=(Button)findViewById(R.id.buttonPrev);
-        webView=(WebView) findViewById(R.id.wvFamily2);
-        textView=(TextView)findViewById(R.id.tvFamily2);
+        imageView=(WebView) findViewById(R.id.wvAlf);
 
-        webView.setBackgroundColor(Color.WHITE);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setUseWideViewPort(true);
+        imageView.setBackgroundColor(Color.WHITE);
+        imageView.getSettings().setLoadWithOverviewMode(true);
+        imageView.getSettings().setUseWideViewPort(true);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getAllImages();
+
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +83,8 @@ public class FamilyActivity extends BaseActivity {
     private void showImage(){
         try {
             JSONObject jsonObject = arrayImages.getJSONObject(TRACK);
-            webView.loadUrl(jsonObject.getString(IMAGE_URL));
-            textView.setText(jsonObject.getString(IMAGE_NAME).toString());
+            imageView.loadUrl(jsonObject.getString(IMAGE_URL).toString());
+            tvAlf.setText(jsonObject.getString(IMAGE_NAME).toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -105,14 +105,13 @@ public class FamilyActivity extends BaseActivity {
     }
 
 
-
     private void getAllImages() {
         class GetAllImages extends AsyncTask<String,Void,String> {
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(FamilyActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
+                loading = ProgressDialog.show(AlphabetActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
 
             @Override

@@ -1,43 +1,38 @@
 package ro.ase.eu.aslapplication;
 
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Environment;
+import android.os.Handler;
 import android.speech.RecognizerIntent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.DownloadListener;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
-import pl.droidsonroids.gif.GifImageView;
+import ro.ase.eu.aslapplication.clase.Expresie;
 import ro.ase.eu.aslapplication.clase.HttpParse;
+import ro.ase.eu.aslapplication.clase.expresieListener;
 
-public class TranslateActivity1 extends BaseActivity {
+public class TranslateActivity1 extends BaseActivity implements expresieListener {
     private static final String SEARCH_URL="https://ileanadaniela19.000webhostapp.com/Translate/getExpresie.php";
     private static final int REQ_CODE_SPEECH_INPUT = 100;
     private TextView tvTranslate;
@@ -49,13 +44,15 @@ public class TranslateActivity1 extends BaseActivity {
 
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
-    public static String nume,urlImagine;
+    public String nume,urlImagine;
+    public int id;
     String parseResult;
     HashMap<String,String> resultHash=new HashMap<>();
 
     String finalResultJSON;
 
     String text="";
+    ArrayList<Expresie> expresies;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +61,6 @@ public class TranslateActivity1 extends BaseActivity {
         Intent intent=getIntent();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         tvTranslate=(TextView)findViewById(R.id.tvTranslate);
         wvTranslate=(WebView) findViewById(R.id.wvTranslate);
@@ -88,23 +84,11 @@ public class TranslateActivity1 extends BaseActivity {
             @Override
             public void onClick(View v) {
                 text=etMessage.getText().toString();
+                expresies=new ArrayList<>();
                 getSearchExpression(text);
             }
         });
 
-        /*wvTranslate.setDownloadListener(new DownloadListener()
-        {
-            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength)
-            {
-                //for downloading directly through download manager
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "download");
-                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                dm.enqueue(request);
-            }
-        });*/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -118,12 +102,12 @@ public class TranslateActivity1 extends BaseActivity {
         int itemId = item.getItemId();
 
         if (itemId == R.id.share) {
-            shareNews();
+            shareContent();
         }
 
         return super.onOptionsItemSelected(item);
     }
-    private void shareNews() {
+    private void shareContent() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, urlImagine);
@@ -157,6 +141,7 @@ public class TranslateActivity1 extends BaseActivity {
 
         }
     }
+
     private void getSearchExpression(final String text){
         class GetSearchExpression extends AsyncTask<String,Void,String> {
 
@@ -187,17 +172,67 @@ public class TranslateActivity1 extends BaseActivity {
         gse.execute(text);
     }
 
-    private class GetHttpResponse extends AsyncTask<Void,Void,Void>{
-        public Context context;
+    /*private static class ObiecteTimer{
+        private final ArrayList<Expresie> path;
+        private final Integer durata;
 
-        public GetHttpResponse(Context context) {
-            this.context = context;
+        private ObiecteTimer(ArrayList<Expresie> path, Integer durata) {
+            this.path = path;
+            this.durata = durata;
+        }
+
+        public ArrayList<Expresie> getPath() {
+            return path;
+        }
+
+        public Integer getDurata() {
+            return durata;
+        }
+    }
+    private static final List<ObiecteTimer> obiecteTimer =new ArrayList<ObiecteTimer>();
+    static{
+
+    }*/
+
+
+    @Override
+       public void onSucces(ArrayList<Expresie> array) {
+        if(array.size()==1) {
+            tvTranslate.setText(array.get(0).getNume());
+            wvTranslate.loadUrl(array.get(0).getPath());
+        }
+        else{
+            Handler handler=new Handler();
+            Runnable runnable=new Runnable() {
+                int count=0;
+                boolean stop=false;
+                @Override
+                public void run() {
+                    tvTranslate.setText(array.get(count).getNume());
+                    wvTranslate.loadUrl(array.get(count).getPath());
+                    count++;
+                    if(count>=array.size()) {
+                        stop=true;
+                    }
+                    if(!stop){
+                        handler.postDelayed(this,6000);
+                    }
+                }
+            };
+            handler.postDelayed(runnable,1000);
+        }
+    }
+
+    private class GetHttpResponse extends AsyncTask<Void,Void,ArrayList<Expresie>>{
+        public expresieListener expresie;
+
+        public GetHttpResponse(expresieListener expresie) {
+            this.expresie = expresie;
         }
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected ArrayList<Expresie> doInBackground(Void... voids) {
             try {
-
                 if (finalResultJSON != null) {
                     JSONArray jsonArray = null;
                     try {
@@ -205,8 +240,11 @@ public class TranslateActivity1 extends BaseActivity {
                         JSONObject jsonObject;
                         for (int i = 0; i < jsonArray.length(); i++) {
                             jsonObject = jsonArray.getJSONObject(i);
+                            id = jsonObject.getInt("id");
                             nume = jsonObject.getString("nume").toString();
                             urlImagine = jsonObject.getString("path").toString();
+                            Expresie e=new Expresie(id, nume, urlImagine);
+                            expresies.add(e);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -215,7 +253,7 @@ public class TranslateActivity1 extends BaseActivity {
             }catch(Exception e){
                 e.printStackTrace();
             }
-            return null;
+            return expresies;
         }
 
         @Override
@@ -224,10 +262,9 @@ public class TranslateActivity1 extends BaseActivity {
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
+        protected void onPostExecute(ArrayList<Expresie> aVoid) {
             super.onPostExecute(aVoid);
-            tvTranslate.setText(nume);
-            wvTranslate.loadUrl(urlImagine);
+            expresie.onSucces(aVoid);
         }
     }
 }

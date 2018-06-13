@@ -8,16 +8,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import ro.ase.eu.aslapplication.activitatiCategorii.AlphabetActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.AnimaleActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.BauturiActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.CuloriActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.EmotiiActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.FamilyActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.FruitsActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.LocuriActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.MancareActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.NumbersActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.OraseActivity;
+import ro.ase.eu.aslapplication.activitatiCategorii.VegetablesActivity;
+
 public class LearnActivity1 extends BaseActivity {
 
     TextView tvAlphabet, tvNumbers, tvColors,tvFruits,tvVegetables,tvFamily, tvEmotii, tvLocuri, tvAnimale, tvOrase, tvMancare, tvBauturi;
     ImageView ivAlphabet, ivNumbers, ivColors,ivFruits,ivVegetables,ivFamily, ivEmotii, ivLocuri, ivAnimale, ivOrase, ivMancare, ivBauturi;
+    public static final String EXTRA_CATEGORIE = "Categorie";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn1);
 
-        Intent intent=getIntent();
+        final Intent intent=getIntent();
 
         tvAlphabet=(TextView)findViewById(R.id.tvAlphabet);
         tvNumbers=(TextView)findViewById(R.id.tvNumbers);
@@ -51,16 +65,16 @@ public class LearnActivity1 extends BaseActivity {
         tvAlphabet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentAlphabet=new Intent(getApplicationContext(),AlphabetActivity.class);
-                startActivity(intentAlphabet);
+                Intent intentAlfabet=new Intent(getApplicationContext(),AlphabetActivity.class);
+                startActivity(intentAlfabet);
             }
         });
 
         tvNumbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentNumber=new Intent(getApplicationContext(),NumbersActivity.class);
-                startActivity(intentNumber);
+                Intent intentNumere=new Intent(getApplicationContext(),NumbersActivity.class);
+                startActivity(intentNumere);
             }
         });
         tvColors.setOnClickListener(new View.OnClickListener() {
@@ -80,15 +94,15 @@ public class LearnActivity1 extends BaseActivity {
         tvVegetables.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentVegetables=new Intent(getApplicationContext(),VegetablesActivity.class);
-                startActivity(intentVegetables);
+                Intent intentLegume=new Intent(getApplicationContext(),VegetablesActivity.class);
+                startActivity(intentLegume);
             }
         });
         tvFamily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentFamily=new Intent(getApplicationContext(),FamilyActivity.class);
-                startActivity(intentFamily);
+                Intent intentFamilie=new Intent(getApplicationContext(),FamilyActivity.class);
+                startActivity(intentFamilie);
             }
         });
 
@@ -139,16 +153,16 @@ public class LearnActivity1 extends BaseActivity {
         ivAlphabet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentAlphabet=new Intent(getApplicationContext(),AlphabetActivity.class);
-                startActivity(intentAlphabet);
+                Intent intentAlfabet=new Intent(getApplicationContext(),AlphabetActivity.class);
+                startActivity(intentAlfabet);
             }
         });
 
         ivNumbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentNumber=new Intent(getApplicationContext(),NumbersActivity.class);
-                startActivity(intentNumber);
+                Intent intentNumere=new Intent(getApplicationContext(),NumbersActivity.class);
+                startActivity(intentNumere);
             }
         });
         ivColors.setOnClickListener(new View.OnClickListener() {
@@ -168,15 +182,15 @@ public class LearnActivity1 extends BaseActivity {
         ivVegetables.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentVegetables=new Intent(getApplicationContext(),VegetablesActivity.class);
-                startActivity(intentVegetables);
+                Intent intentLegume=new Intent(getApplicationContext(),VegetablesActivity.class);
+                startActivity(intentLegume);
             }
         });
         ivFamily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentFamily=new Intent(getApplicationContext(),FamilyActivity.class);
-                startActivity(intentFamily);
+                Intent intentFamilie=new Intent(getApplicationContext(),FamilyActivity.class);
+                startActivity(intentFamilie);
             }
         });
 

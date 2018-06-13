@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class QuizDbHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "MyDatabaseQuiz.db";
+    private static final String DATABASE_NAME = "DatabaseQuiz2.db";
     private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase db;
 
@@ -36,15 +36,27 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 QuizContract.QuestionsTable.COLUMN_ULRIMAGE + " TEXT, " +
                 QuizContract.QuestionsTable.COLUMN_CATEGORY + " TEXT" +
                 ")";
+        final String SQL_QUESTION2_TABLE="CREATE TABLE "+
+                QuizContract.Questions2Table.TABLE_NAME2+ " ( "+
+                QuizContract.Questions2Table._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QuizContract.Questions2Table.COLUMN_QUESTION + " TEXT, " +
+                QuizContract.Questions2Table.COLUMN_OPTION1 + " TEXT, " +
+                QuizContract.Questions2Table.COLUMN_OPTION2 + " TEXT, " +
+                QuizContract.Questions2Table.COLUMN_OPTION3 + " TEXT, " +
+                QuizContract.Questions2Table.COLUMN_OPTION4 + " TEXT, " +
+                QuizContract.Questions2Table.COLUMN_ANSWER_NR + " TEXT" +
+                ")";
         db.execSQL(SQL_CREATE_TABLE);
+        db.execSQL(SQL_QUESTION2_TABLE);
         //fill table
         fillQuestionsTable();
-
+        fillQuestionTable2();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + QuizContract.QuestionsTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ QuizContract.Questions2Table.TABLE_NAME2);
         onCreate(db);
     }
 
@@ -497,6 +509,69 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
 
     }
+
+    private void fillQuestionTable2(){
+        Question2 q1= new Question2("În ce imagine este reprezentat cuvântul CULOARE : ","https://ileanadaniela19.000webhostapp.com/Culori/culoare.gif","https://ileanadaniela19.000webhostapp.com/Familie/baiat.gif","https://ileanadaniela19.000webhostapp.com/Emotii/Anxietate.gif","https://ileanadaniela19.000webhostapp.com/Fructe/capsuni.gif",1);
+        addQuestion2(q1);
+
+        Question2 q2=new Question2("În ce imagine este reprezentat cuvântul  PORTOCALĂ :","https://ileanadaniela19.000webhostapp.com/Animale/Cangur.gif","https://ileanadaniela19.000webhostapp.com/Animale/Leu.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Bere.gif","https://ileanadaniela19.000webhostapp.com/Fructe/portocala.gif",4);
+        addQuestion2(q2);
+
+        Question2 q3=new Question2("În ce imagine este reprezentat cuvântul ROSU : ","https://ileanadaniela19.000webhostapp.com/Legume/ardei.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Bere.gif","https://ileanadaniela19.000webhostapp.com/Culori/rosu.gif","https://ileanadaniela19.000webhostapp.com/Emotii/Anxietate.gif",3);
+        addQuestion2(q3);
+
+        Question2 q4=new Question2("În ce imagine este reprezentat cuvântul  FASOLE : ","https://ileanadaniela19.000webhostapp.com/Animale/Focă.gif","https://ileanadaniela19.000webhostapp.com/Legume/fasole.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Ceai.gif","https://ileanadaniela19.000webhostapp.com/Mancare/Desert.gif",2);
+        addQuestion2(q4);
+
+        Question2 q5=new Question2("În ce imagine este reprezentat cuvântul PIZZA :","https://ileanadaniela19.000webhostapp.com/Mancare/Pizza.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Cafea.gif","https://ileanadaniela19.000webhostapp.com/Culori/mov.gif","https://ileanadaniela19.000webhostapp.com/Animale/Hipopotam.gif",1);
+        addQuestion2(q5);
+
+        Question2 q6=new Question2("În ce imagine este reprezentat cuvântul  CĂMILĂ : ","https://ileanadaniela19.000webhostapp.com/Bauturi/Bere.gif","https://ileanadaniela19.000webhostapp.com/Animale/Leu.gif","https://ileanadaniela19.000webhostapp.com/Animale/Hipopotam.gif","https://ileanadaniela19.000webhostapp.com/Animale/Cămilă.gif",4);
+        addQuestion2(q6);
+
+        Question2 q7=new Question2("În ce imagine este reprezentat cuvântul  CAPPUCINO : ","https://ileanadaniela19.000webhostapp.com/Orase/Constanstanța.gif","https://ileanadaniela19.000webhostapp.com/Legume/ceapa.gif","https://ileanadaniela19.000webhostapp.com/Culori/gri.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Cappucino.gif",4);
+        addQuestion2(q7);
+
+        Question2 q8=new Question2("În ce imagine este reprezentat cuvântul CAISĂ : ","https://ileanadaniela19.000webhostapp.com/Bauturi/Ceai.gif","https://ileanadaniela19.000webhostapp.com/Emotii/Frică.gif","https://ileanadaniela19.000webhostapp.com/Fructe/caisa.gif","https://ileanadaniela19.000webhostapp.com/Animale/Focă.gif ",3);
+        addQuestion2(q8);
+
+        Question2 q9=new Question2("În ce imagine este reprezentat cuvântul BUCUREȘTI : ","https://ileanadaniela19.000webhostapp.com/Orase/București.gif","https://ileanadaniela19.000webhostapp.com/Legume/salata.gif","https://ileanadaniela19.000webhostapp.com/Mancare/Cârnați.gif","https://ileanadaniela19.000webhostapp.com/Familie/matusa.gif",1);
+        addQuestion2(q9);
+
+        Question2 q10=new Question2("În ce imagine este reprezentat cuvântul GIURGIU : ","https://ileanadaniela19.000webhostapp.com/Culori/galben.gif","https://ileanadaniela19.000webhostapp.com/Orase/Giurgiu.gif","https://ileanadaniela19.000webhostapp.com/Animale/Girafă.gif","https://ileanadaniela19.000webhostapp.com/Animale/Gâscă.gif",2);
+        addQuestion2(q10);
+
+        Question2 q11=new Question2("În ce imagine este reprezentat cuvântul ELEFANT : ","https://ileanadaniela19.000webhostapp.com/Culori/alb.gif","https://ileanadaniela19.000webhostapp.com/Animale/Crocodil.gif","https://ileanadaniela19.000webhostapp.com/Animale/Elefant.gif","https://ileanadaniela19.000webhostapp.com/Legume/legume.gif",3);
+        addQuestion2(q11);
+
+        Question2 q12=new Question2("În ce imagine este reprezentat cuvântul VIN(băutura) : ","https://ileanadaniela19.000webhostapp.com/Culori/violet.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Vin.gif","https://ileanadaniela19.000webhostapp.com/Fructe/zmeura.gif","https://ileanadaniela19.000webhostapp.com/Mancare/Înghețată.gif",2);
+        addQuestion2(q12);
+
+        Question2 q13=new Question2("În ce imagine este reprezentat cuvântul  VIOLET :","https://ileanadaniela19.000webhostapp.com/Culori/violet.gif","https://ileanadaniela19.000webhostapp.com/Culori/gri.gif","https://ileanadaniela19.000webhostapp.com/Familie/copil.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Cafea.gif",1);
+        addQuestion2(q13);
+
+        Question2 q14=new Question2("În ce imagine este reprezentat cuvântul  MAIONEZĂ :","https://ileanadaniela19.000webhostapp.com/Mancare/Maioneză.gif","https://ileanadaniela19.000webhostapp.com/Mancare/Pizza.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Bere.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Vin.gif",1);
+        addQuestion2(q14);
+
+        Question2 q15=new Question2("În ce imagine este reprezentat cuvântul  COPIL :","https://ileanadaniela19.000webhostapp.com/Animale/Hipopotam.gif","https://ileanadaniela19.000webhostapp.com/Mancare/Telemea.gif","https://ileanadaniela19.000webhostapp.com/Familie/copil.gif","https://ileanadaniela19.000webhostapp.com/Orase/Craiova.gif",3);
+        addQuestion2(q15);
+
+        Question2 q16=new Question2("În ce imagine este reprezentat cuvântul  MAIMUȚĂ :","https://ileanadaniela19.000webhostapp.com/Culori/gri.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Bere.gif","https://ileanadaniela19.000webhostapp.com/Animale/Crocodil.gif","https://ileanadaniela19.000webhostapp.com/Animale/Maimuță.gif",4);
+        addQuestion2(q16);
+
+        Question2 q17= new Question2("În ce imagine este reprezentat cuvântul  SIROP :","https://ileanadaniela19.000webhostapp.com/Emotii/Dragoste.gif","https://ileanadaniela19.000webhostapp.com/Bauturi/Sirop.gif","https://ileanadaniela19.000webhostapp.com/Culori/rosu.gif","https://ileanadaniela19.000webhostapp.com/Familie/fiu.gif",2);
+        addQuestion2(q17);
+
+        Question2 q18=new Question2("În ce imagine este reprezentat cuvântul  ZEBRĂ :","https://ileanadaniela19.000webhostapp.com/Fructe/mar.gif","https://ileanadaniela19.000webhostapp.com/Familie/bunic.gif","https://ileanadaniela19.000webhostapp.com/Emotii/Surpriză.gif","https://ileanadaniela19.000webhostapp.com/Animale/Zebră.gif",4);
+        addQuestion2(q18);
+
+        Question2 q19 =new Question2("În ce imagine este reprezentat cuvântul  SOȚIE :","https://ileanadaniela19.000webhostapp.com/Familie/sotie.gif","https://ileanadaniela19.000webhostapp.com/Familie/sot.gif","https://ileanadaniela19.000webhostapp.com/Legume/salata.gif","https://ileanadaniela19.000webhostapp.com/Animale/Stru%C8%9B.gif",1);
+        addQuestion2(q19);
+
+        Question2 q20=new Question2("În ce imagine este reprezentat cuvântul  SLATINA :","https://ileanadaniela19.000webhostapp.com/Orase/Suceava.gif","https://ileanadaniela19.000webhostapp.com/Fructe/piersica.gif","https://ileanadaniela19.000webhostapp.com/Orase/Slatina.gif","https://ileanadaniela19.000webhostapp.com/Animale/Pisică.gif",3);
+        addQuestion2(q20);
+
+    }
     private void addQuestion(Question question) {
         ContentValues cv = new ContentValues();
         cv.put(QuizContract.QuestionsTable.COLUMN_QUESTION, question.getQuestion());
@@ -507,6 +582,17 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuizContract.QuestionsTable.COLUMN_ULRIMAGE,question.getUrlImage());
         cv.put(QuizContract.QuestionsTable.COLUMN_CATEGORY, question.getCategory());
         db.insert(QuizContract.QuestionsTable.TABLE_NAME, null, cv);
+    }
+
+    private void addQuestion2(Question2 question2){
+        ContentValues cv = new ContentValues();
+        cv.put(QuizContract.Questions2Table.COLUMN_QUESTION, question2.getQuestion2());
+        cv.put(QuizContract.Questions2Table.COLUMN_OPTION1, question2.getOption12());
+        cv.put(QuizContract.Questions2Table.COLUMN_OPTION2, question2.getOption22());
+        cv.put(QuizContract.Questions2Table.COLUMN_OPTION3, question2.getOption32());
+        cv.put(QuizContract.Questions2Table.COLUMN_OPTION4, question2.getOption42());
+        cv.put(QuizContract.Questions2Table.COLUMN_ANSWER_NR, question2.getAnswerNr2());
+        db.insert(QuizContract.Questions2Table.TABLE_NAME2, null, cv);
     }
 
     public ArrayList<Question> getAllQuestions() {
@@ -555,6 +641,29 @@ public class QuizDbHelper extends SQLiteOpenHelper {
             } while (c.moveToNext());
         }
 
+        c.close();
+        return questionList;
+    }
+
+    public ArrayList<Question2> getQuestionQuizAvansat(){
+        ArrayList<Question2> questionList = new ArrayList<>();
+        db = getReadableDatabase();
+
+        String sql="SELECT * FROM " + QuizContract.Questions2Table.TABLE_NAME2 + " ORDER BY RANDOM() LIMIT 15";
+        Cursor c = db.rawQuery(sql, null);
+
+        if (c.moveToFirst()) {
+            do {
+                Question2 question = new Question2();
+                question.setQuestion2(c.getString(c.getColumnIndex(QuizContract.Questions2Table.COLUMN_QUESTION)));
+                question.setOption12(c.getString(c.getColumnIndex(QuizContract.Questions2Table.COLUMN_OPTION1)));
+                question.setOption22(c.getString(c.getColumnIndex(QuizContract.Questions2Table.COLUMN_OPTION2)));
+                question.setOption32(c.getString(c.getColumnIndex(QuizContract.Questions2Table.COLUMN_OPTION3)));
+                question.setOption42(c.getString(c.getColumnIndex(QuizContract.Questions2Table.COLUMN_OPTION4)));
+                question.setAnswerNr2(c.getInt(c.getColumnIndex(QuizContract.Questions2Table.COLUMN_ANSWER_NR)));
+                questionList.add(question);
+            } while (c.moveToNext());
+        }
         c.close();
         return questionList;
     }

@@ -39,10 +39,10 @@
             />
         </activity>
         <activity
-            android:name=".AlphabetActivity"
+            android:name=".activitatiCategorii.AlphabetActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".NumbersActivity"
+            android:name=".activitatiCategorii.NumbersActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity android:name=".SettingsAccount">
             <meta-data
@@ -51,16 +51,16 @@
             />
         </activity>
         <activity
-            android:name=".CuloriActivity"
+            android:name=".activitatiCategorii.CuloriActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".FamilyActivity"
+            android:name=".activitatiCategorii.FamilyActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".FruitsActivity"
+            android:name=".activitatiCategorii.FruitsActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".VegetablesActivity"
+            android:name=".activitatiCategorii.VegetablesActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity android:name=".AboutActivity">
             <meta-data
@@ -69,22 +69,22 @@
             />
         </activity>
         <activity
-            android:name=".EmotiiActivity"
+            android:name=".activitatiCategorii.EmotiiActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".BauturiActivity"
+            android:name=".activitatiCategorii.BauturiActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".MancareActivity"
+            android:name=".activitatiCategorii.MancareActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".OraseActivity"
+            android:name=".activitatiCategorii.OraseActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".LocuriActivity"
+            android:name=".activitatiCategorii.LocuriActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity
-            android:name=".AnimaleActivity"
+            android:name=".activitatiCategorii.AnimaleActivity"
             android:parentActivityName=".LearnActivity1" />
         <activity android:name=".GamesActivity">
             <meta-data
@@ -99,16 +99,19 @@
             android:parentActivityName=".LoginActivity"
             android:taskAffinity="" />
 
-        <service
-            android:name=".clase.NotificationService1"
-            android:enabled="true" />
+        <receiver
+            android:name=".clase.AlarmReceiver1"
+            android:enabled="true"
+            android:process=":remote" />
 
-        <receiver android:name=".clase.AlarmReceiver1" />
+        <service android:name=".clase.AlarmService1" />
 
         <activity
             android:name=".QuizCategoryActivity"
-            android:parentActivityName=".NivelUsorActivity" />
-        <activity android:name=".QuizAvansatActivity"></activity>
+            android:parentActivityName=".GamesActivity" />
+        <activity
+            android:name=".QuizAvansatActivity"
+            android:parentActivityName=".GamesActivity" />
     </application>
 
 </manifest>
