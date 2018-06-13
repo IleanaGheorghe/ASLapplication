@@ -1,8 +1,10 @@
 package ro.ase.eu.aslapplication;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +21,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Locale;
 
+import ro.ase.eu.aslapplication.activitatiCategorii.LocuriActivity;
+import ro.ase.eu.aslapplication.clase.HttpParse;
+import ro.ase.eu.aslapplication.clase.InputValidation;
 import ro.ase.eu.aslapplication.intrebariQuiz.Question2;
 import ro.ase.eu.aslapplication.intrebariQuiz.QuizDbHelper;
 import ro.ase.eu.aslapplication.intrebariQuiz.WebViewAdapter;
@@ -64,8 +70,13 @@ public class QuizAvansatActivity extends BaseActivity {
     private boolean answered;
 
     private long backPressedTime;
+    String finalResult ;
+    String HttpURL = "https://ileanadaniela19.000webhostapp.com/LoginRegister/inregistrareScoruri.php";
+    HashMap<String,String> hashMap = new HashMap<>();
+    HttpParse httpParse = new HttpParse();
 
     private String[] url;
+    String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +102,7 @@ public class QuizAvansatActivity extends BaseActivity {
 
         Intent intent = getIntent();
 
-        String category = intent.getStringExtra(GamesActivity.EXTRA_CATEGORY);
+        category = intent.getStringExtra(GamesActivity.EXTRA_CATEGORY);
 
         textViewCategoryA.setText("Categorie: " + category);
 
@@ -254,10 +265,11 @@ public class QuizAvansatActivity extends BaseActivity {
             buttonConfirmNext.setText("Next");
         } else {
             buttonConfirmNext.setText("Finish");
+            UserRegisterScore(LoginActivity.EmailHolder,score,"Toate categoriile");
             AlertDialog.Builder builder=new AlertDialog.Builder(QuizAvansatActivity.this);
 
             builder.setTitle("Scor");
-            builder.setMessage("Ați obținut : "+score);
+            builder.setMessage("Ați răspuns corect la : "+score + "întrebări");
             builder.setPositiveButton("OK",null);
             builder.setIcon(R.drawable.ic_alert);
             AlertDialog dialog=builder.create();
@@ -301,4 +313,36 @@ public class QuizAvansatActivity extends BaseActivity {
         outState.putParcelableArrayList(KEY_QUESTION_LIST2, questionList);
     }
 
+    public void UserRegisterScore(final String email, final Integer scor, final String categorie){
+
+        class UserRegisterScoreClass extends AsyncTask<String,Void,String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String httpResponseMsg) {
+                super.onPostExecute(httpResponseMsg);
+                Toast.makeText(QuizAvansatActivity.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                hashMap.put("email",params[0]);
+                hashMap.put("scor",String.valueOf(params[1]));
+                hashMap.put("categorie",params[2]);
+
+                finalResult = httpParse.postRequest(hashMap, HttpURL);
+
+                return finalResult;
+            }
+        }
+
+        UserRegisterScoreClass userRegisterScoreClass = new UserRegisterScoreClass();
+
+        userRegisterScoreClass.execute(email,String.valueOf(scor),categorie);
+    }
 }
