@@ -77,22 +77,22 @@ public class QuizCategoryActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_category);
 
-        textViewQuestion = findViewById(R.id.text_view_question);
-        textViewScore = findViewById(R.id.text_view_score);
-        textViewQuestionCount = findViewById(R.id.text_view_question_count);
-        textViewCategory = findViewById(R.id.text_view_category);
-        textViewCountDown = findViewById(R.id.text_view_countdown);
-        webViewQuiz=findViewById(R.id.webViewQuiz);
+        textViewQuestion = (TextView) findViewById(R.id.text_view_question);
+        textViewScore = (TextView) findViewById(R.id.text_view_score);
+        textViewQuestionCount = (TextView) findViewById(R.id.text_view_question_count);
+        textViewCategory = (TextView) findViewById(R.id.text_view_category);
+        textViewCountDown = (TextView) findViewById(R.id.text_view_countdown);
+        webViewQuiz= (WebView) findViewById(R.id.webViewQuiz);
 
         webViewQuiz.setBackgroundColor(Color.WHITE);
         webViewQuiz.getSettings().setLoadWithOverviewMode(true);
         webViewQuiz.getSettings().setUseWideViewPort(true);
 
-        rbGroup = findViewById(R.id.radio_group);
-        rb1 = findViewById(R.id.radio_button1);
-        rb2 = findViewById(R.id.radio_button2);
-        rb3 = findViewById(R.id.radio_button3);
-        buttonConfirmNext = findViewById(R.id.button_confirm_next);
+        rbGroup = (RadioGroup) findViewById(R.id.radio_group);
+        rb1 = (RadioButton) findViewById(R.id.radio_button1);
+        rb2 = (RadioButton) findViewById(R.id.radio_button2);
+        rb3 = (RadioButton) findViewById(R.id.radio_button3);
+        buttonConfirmNext = (Button) findViewById(R.id.button_confirm_next);
 
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
@@ -210,7 +210,7 @@ public class QuizCategoryActivity extends BaseActivity {
 
         countDownTimer.cancel();
 
-        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
+        RadioButton rbSelected = (RadioButton) findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
 
         if (answerNr == currentQuestion.getAnswerNr()) {

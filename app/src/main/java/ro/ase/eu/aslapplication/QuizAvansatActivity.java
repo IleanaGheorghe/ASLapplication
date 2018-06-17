@@ -85,20 +85,20 @@ public class QuizAvansatActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        textViewCategoryA = findViewById(R.id.text_view_categoryA);
-        textViewQuestion = findViewById(R.id.text_view_questionA);
-        textViewScore = findViewById(R.id.text_view_scoreA);
-        textViewQuestionCount = findViewById(R.id.text_view_question_countA);
-        textViewCountDown = findViewById(R.id.text_view_countdownA);
+        textViewCategoryA = (TextView) findViewById(R.id.text_view_categoryA);
+        textViewQuestion = (TextView) findViewById(R.id.text_view_questionA);
+        textViewScore = (TextView) findViewById(R.id.text_view_scoreA);
+        textViewQuestionCount = (TextView) findViewById(R.id.text_view_question_countA);
+        textViewCountDown = (TextView) findViewById(R.id.text_view_countdownA);
 
-        buttonConfirmNext = findViewById(R.id.button_confirm_nextA);
-        gridView =findViewById(R.id.gridGif);
+        buttonConfirmNext = (Button) findViewById(R.id.button_confirm_nextA);
+        gridView = (GridView) findViewById(R.id.gridGif);
 
-        rbGroup = findViewById(R.id.radio_groupA);
-        rb1 = findViewById(R.id.radio_button1A);
-        rb2 = findViewById(R.id.radio_button2A);
-        rb3 = findViewById(R.id.radio_button3A);
-        rb4 =findViewById(R.id.radio_button4A);
+        rbGroup = (RadioGroup) findViewById(R.id.radio_groupA);
+        rb1 = (RadioButton) findViewById(R.id.radio_button1A);
+        rb2 = (RadioButton) findViewById(R.id.radio_button2A);
+        rb3 = (RadioButton) findViewById(R.id.radio_button3A);
+        rb4 = (RadioButton) findViewById(R.id.radio_button4A);
 
         Intent intent = getIntent();
 
@@ -225,7 +225,7 @@ public class QuizAvansatActivity extends BaseActivity {
 
         countDownTimer.cancel();
 
-        RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
+        RadioButton rbSelected = (RadioButton) findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
 
         if (answerNr == currentQuestion.getAnswerNr2()) {
