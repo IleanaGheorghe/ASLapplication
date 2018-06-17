@@ -102,13 +102,10 @@ public class SettingsAccount extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-
-                //progressDialog = ProgressDialog.show(SettingsAccount.this,"Loading Data",null,true,true);
             }
 
             @Override
             protected void onPostExecute(String httpResponse) {
-
                 super.onPostExecute(httpResponse);
 
                 Toast.makeText(SettingsAccount.this,httpResponse.toString(), Toast.LENGTH_LONG).show();
@@ -116,18 +113,14 @@ public class SettingsAccount extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
-
             }
 
             @Override
             protected String doInBackground(String... params) {
 
                 hashMap.put("name",params[0]);
-
                 hashMap.put("email",params[1]);
-
                 hashMap.put("password",params[2]);
-
                 finalResult = httpParse.postRequest(hashMap, HttpURL);
 
                 return finalResult;
@@ -135,7 +128,6 @@ public class SettingsAccount extends AppCompatActivity {
         }
 
         UpdateUserClass updateUserClass = new UpdateUserClass();
-
         updateUserClass.execute(name,email,password);
     }
 

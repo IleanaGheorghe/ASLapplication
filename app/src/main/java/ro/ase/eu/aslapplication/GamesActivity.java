@@ -13,8 +13,8 @@ import ro.ase.eu.aslapplication.intrebariQuiz.Question;
 
 public class GamesActivity extends BaseActivity {
 
-    TextView tvUsor, tvGreu;
-    Button btnUsor, btnGreu;
+    TextView tvUsor, tvGreu, tvAltQuiz;
+    Button btnUsor, btnGreu, btnAltQuiz;
     Spinner spinnerCategory;
 
     private static final int REQUEST_CODE_QUIZ = 1;
@@ -31,9 +31,11 @@ public class GamesActivity extends BaseActivity {
 
         tvUsor=(TextView)findViewById(R.id.tvUsor);
         tvGreu=(TextView)findViewById(R.id.tvGreu);
+        tvAltQuiz=(TextView) findViewById(R.id.tvAltQuiz);
 
         btnUsor=(Button)findViewById(R.id.btnUsor);
         btnGreu=(Button)findViewById(R.id.btnGreu);
+        btnAltQuiz=(Button) findViewById(R.id.btnAltQuiz);
 
         spinnerCategory=(Spinner)findViewById(R.id.spinnerCategory);
 
@@ -62,6 +64,15 @@ public class GamesActivity extends BaseActivity {
                 Intent intentGreu=new Intent(GamesActivity.this, QuizAvansatActivity.class);
                 intentGreu.putExtra(EXTRA_CATEGORY, "Toate categoriile");
                 startActivity(intentGreu);
+            }
+        });
+
+        btnAltQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentQuiz=new Intent(GamesActivity.this,QuizExpresiiActivity.class);
+                intentQuiz.putExtra(EXTRA_CATEGORY,"Expresii");
+                startActivity(intentQuiz);
             }
         });
     }

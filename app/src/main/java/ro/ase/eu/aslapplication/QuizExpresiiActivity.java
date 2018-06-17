@@ -28,7 +28,7 @@ import ro.ase.eu.aslapplication.clase.HttpParse;
 import ro.ase.eu.aslapplication.intrebariQuiz.Question;
 import ro.ase.eu.aslapplication.intrebariQuiz.QuizDbHelper;
 
-public class QuizCategoryActivity extends BaseActivity {
+public class QuizExpresiiActivity extends BaseActivity {
 
     public static final String EXTRA_SCORE = "extraScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;
@@ -75,24 +75,24 @@ public class QuizCategoryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz_category);
+        setContentView(R.layout.activity_quiz_expresii);
 
-        textViewQuestion = findViewById(R.id.text_view_question);
-        textViewScore = findViewById(R.id.text_view_score);
-        textViewQuestionCount = findViewById(R.id.text_view_question_count);
-        textViewCategory = findViewById(R.id.text_view_category);
-        textViewCountDown = findViewById(R.id.text_view_countdown);
-        webViewQuiz=findViewById(R.id.webViewQuiz);
+        textViewQuestion = findViewById(R.id.text_view_questionE);
+        textViewScore = findViewById(R.id.text_view_scoreE);
+        textViewQuestionCount = findViewById(R.id.text_view_question_countE);
+        textViewCategory = findViewById(R.id.text_view_categoryE);
+        textViewCountDown = findViewById(R.id.text_view_countdownE);
+        webViewQuiz=findViewById(R.id.webViewQuizE);
 
         webViewQuiz.setBackgroundColor(Color.WHITE);
         webViewQuiz.getSettings().setLoadWithOverviewMode(true);
         webViewQuiz.getSettings().setUseWideViewPort(true);
 
-        rbGroup = findViewById(R.id.radio_group);
-        rb1 = findViewById(R.id.radio_button1);
-        rb2 = findViewById(R.id.radio_button2);
-        rb3 = findViewById(R.id.radio_button3);
-        buttonConfirmNext = findViewById(R.id.button_confirm_next);
+        rbGroup = findViewById(R.id.radio_groupE);
+        rb1 = findViewById(R.id.radio_button1E);
+        rb2 = findViewById(R.id.radio_button2E);
+        rb3 = findViewById(R.id.radio_button3E);
+        buttonConfirmNext = findViewById(R.id.button_confirm_nextE);
 
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
@@ -108,7 +108,7 @@ public class QuizCategoryActivity extends BaseActivity {
 
         if (savedInstanceState == null) {
             QuizDbHelper dbHelper = new QuizDbHelper(this);
-            questionList = dbHelper.getQuestionsByCategory(category);
+            questionList = dbHelper.getQuestionsByCategoryRandom(category);
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
 
@@ -137,7 +137,7 @@ public class QuizCategoryActivity extends BaseActivity {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
                         checkAnswer();
                     } else {
-                        Toast.makeText(QuizCategoryActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizExpresiiActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     showNextQuestion();
@@ -248,7 +248,7 @@ public class QuizCategoryActivity extends BaseActivity {
 
             Log.e("Categorie",category);
             UserRegisterScore(LoginActivity.EmailHolder,score,category);
-            AlertDialog.Builder builder=new AlertDialog.Builder(QuizCategoryActivity.this);
+            AlertDialog.Builder builder=new AlertDialog.Builder(QuizExpresiiActivity.this);
             builder.setTitle("Scor");
             builder.setMessage("Ați răspuns corect la : "+score + " întrebări");
             builder.setPositiveButton("OK",null);
@@ -306,7 +306,7 @@ public class QuizCategoryActivity extends BaseActivity {
             @Override
             protected void onPostExecute(String httpResponseMsg) {
                 super.onPostExecute(httpResponseMsg);
-                Toast.makeText(QuizCategoryActivity.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(QuizExpresiiActivity.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -327,3 +327,4 @@ public class QuizCategoryActivity extends BaseActivity {
         userRegisterScoreClass.execute(email,String.valueOf(scor),categorie);
     }
 }
+

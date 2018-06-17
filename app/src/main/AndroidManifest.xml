@@ -112,6 +112,10 @@
         <activity
             android:name=".QuizAvansatActivity"
             android:parentActivityName=".GamesActivity" />
+        <activity android:name=".QuizExpresiiActivity"
+            android:parentActivityName=".GamesActivity"/>
+        <activity android:name=".AdaugareGifActivity"
+            android:parentActivityName=".afterLogActivity"></activity>
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@
                 android:id="@+id/tvNumeAplicatie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Soluție de asistență pentru persoanele cu dificultăți de vorbire"
+                android:text="Soluție de învățare a limbajului mimico-gestual"
                 android:textAlignment="center"
                 android:textColor="@color/clickButton"
                 android:textSize="25sp"
@@ -55,13 +55,24 @@
                 android:background="@drawable/edittextstyle"
                 android:drawableLeft="@mipmap/ic_pass2"
                 android:gravity=""
-                android:hint="Password"
+                android:hint="Parolă"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="#fff"
                 android:textColorHint="#fff"
                 android:textCursorDrawable="@null" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="300dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:textColor="#fff"
+                android:buttonTint="#fff"
+                android:text="Rămâi conectat"
+                android:textSize="8pt"/>
 
             <Button
                 android:id="@+id/btnLogin"
@@ -70,7 +81,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/buttonstyleselector"
-                android:text="Login"
+                android:text="Conectare"
                 android:textAlignment="center"
                 android:textColor="#fff" />
 
@@ -81,7 +92,7 @@
                 android:layout_marginTop="65dp"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="Not account yet? Create one"
+                android:text="Nu aveți cont? Creați unul."
                 android:textColor="#fff" />
 
         </LinearLayout>

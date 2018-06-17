@@ -51,7 +51,7 @@ public class CreateaccountActivity extends AppCompatActivity {
                 if (!inputValidation.isInputEditTextFilled(etEmail, getString(R.string.error_message))) {
                     return;
                 }
-                if (!inputValidation.isInputEditTextEmail(etEmail, getString(R.string.error_message))) {
+                if (!inputValidation.isInputEditTextEmail(etEmail, "Introduceti un email valid!")) {
                     return;
                 }
                 if (!inputValidation.isInputEditTextFilled(etPass, getString(R.string.error_message))) {
@@ -63,17 +63,10 @@ public class CreateaccountActivity extends AppCompatActivity {
                 CheckEditTextIsEmptyOrNot();
 
                 if(CheckEditText){
-
-                    // If EditText is not empty and CheckEditText = True then this block will execute.
-
                     UserRegisterFunction(Name_Holder, EmailHolder, PasswordHolder,ConfPass_Holder);
-
                 }
                 else {
-
-                    // If EditText is empty then this block will execute .
-                    Toast.makeText(CreateaccountActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
-
+                    Toast.makeText(CreateaccountActivity.this, "Completati toate campurile.", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -130,15 +123,11 @@ public class CreateaccountActivity extends AppCompatActivity {
             protected String doInBackground(String... params) {
 
                 hashMap.put("name",params[0]);
-
                 hashMap.put("email",params[1]);
-
                 hashMap.put("password",params[2]);
-
                 hashMap.put("confpass",params[3]);
-
+                
                 finalResult = httpParse.postRequest(hashMap, HttpURL);
-
                 return finalResult;
             }
         }

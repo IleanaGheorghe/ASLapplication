@@ -3,24 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/logout"
-        android:icon="@mipmap/ic_logout_round"
-        android:title="Log out"
-        app:showAsAction="never"
-        />
+        android:id="@+id/itmAdauga"
+        android:icon="@mipmap/ic_adauga_round"
+        android:title="Adăugare în dicționar"
+        app:showAsAction="never" />
     <item
         android:id="@+id/sett"
         android:icon="@mipmap/ic_settings_round"
-        android:title="Settings"
+        android:title="Setări"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@mipmap/ic_logout_round"
+        android:title="Deconectare"
         app:showAsAction="never"
-      />
+        />
     <item
         android:id="@+id/delAccount"
-        android:title="Delete account" />
+        android:title="Ștergere cont"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/itmAbout"
         android:icon="@mipmap/ic_about_round"
-        android:title="About"
+        android:title="Despre aplicație"
         app:showAsAction="never"
      />
 </menu>

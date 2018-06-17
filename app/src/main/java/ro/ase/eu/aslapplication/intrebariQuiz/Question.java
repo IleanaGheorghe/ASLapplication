@@ -20,6 +20,7 @@ public class Question implements Parcelable {
     public static final String CATEGORY_FAMILIE = "Familie";
     public static final String CATEGORY_ANIMALE = "Animale";
     public static final String CATEGORY_EMOTII = "Emotii";
+    public static final String CATEGORY_EXPRESII="Expresii";
 
 
     private String question;

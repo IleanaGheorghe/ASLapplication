@@ -1,6 +1,7 @@
 package ro.ase.eu.aslapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.TokenWatcher;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,13 @@ public class BaseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();
         if(id==R.id.logout){
+            SharedPreferences preferences=getSharedPreferences("LoginDetails",MODE_PRIVATE);
+            SharedPreferences.Editor editor=preferences.edit();
+            String email=preferences.getString("Email",null);
+            String pass=preferences.getString("Password",null);
+            editor.clear();
+            editor.commit();
+
             Intent intent=new Intent(BaseActivity.this,LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
@@ -51,6 +59,10 @@ public class BaseActivity extends AppCompatActivity {
         if(id==R.id.itmAbout){
             Intent intent=new Intent(BaseActivity.this,AboutActivity.class);
             startActivity(intent);
+        }
+        if(id==R.id.itmAdauga){
+            Intent intentAdauga=new Intent(BaseActivity.this,AdaugareGifActivity.class);
+            startActivity(intentAdauga);
         }
         return super.onOptionsItemSelected(item);
     }

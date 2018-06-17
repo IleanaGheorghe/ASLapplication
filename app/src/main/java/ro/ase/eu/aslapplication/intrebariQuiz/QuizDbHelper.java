@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class QuizDbHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "DatabaseQuiz2.db";
+    private static final String DATABASE_NAME = "DatabaseQuiz5.db";
     private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase db;
 
@@ -507,6 +507,130 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q145= new Question("În gif-ul urmator este reprezentată urmatoarea emoție: ","Frică","Anxietate","Fericire", 2, " https://ileanadaniela19.000webhostapp.com/Emotii/Anxietate.gif", Question.CATEGORY_EMOTII);
         addQuestion(q145);
 
+        //Expresii
+        Question q146= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Acesta este soțul meu","Acesta este colegul meu","Aveți dreptate", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/acesta%20este%20colegul%20meu.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q146);
+
+        Question q147= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Aveți vreo legitimație la dvs","Am să vă fac cunoștință","Aș dori să-ți cer sfatul", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/am%20s%C4%83%20v%C4%83%20fac%20cuno%C8%99tin%C8%9B%C4%83.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q147);
+
+        Question q148= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Aș vrea să știu unde pot cumpara","Ați putea să semnați aici vă rog","Ați putea vorbi mai rar și clar vă rog", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/a%C8%9Bi%20putea%20vorbi%20mai%20rar%20%C8%99i%20clar%20v%C4%83%20rog.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q148);
+
+        Question q149= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Care este problema","Care este starea dvs civilă","Casă de piatră", 1, "https://teratoid-photodiode.000webhostapp.com/Translate/care%20este%20problema.gif", Question.CATEGORY_EXPRESII);
+        addQuestion(q149);
+
+        Question q150= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ce s-a întâmplat","Ce doriți","Ce este acolo", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/ce%20dori%C8%9Bi.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q150);
+
+
+        Question q151= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ce vârstă ai","Ce doriți","Ce mai faci", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/ce%20mai%20faci.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q151);
+
+        Question q152= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Cred ca da ","Cine este acolo","Ce este acolo", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/cine%20este%20acolo.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q152);
+
+        Question q153= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Cred că ne-am mai întâlnit ","Cum se numește","Cred că da", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/cred%20c%C4%83%20ne-am%20mai%20%C3%AEnt%C3%A2lnit.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q153);
+
+        Question q154= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Da sunt absolut sigur","De unde sunteți","De unde veniți", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/da%20sunt%20absolut%20sigur.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q154);
+
+
+        Question q155= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","E o idee bună ","Este foarte important","Este posibil", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/este%20foarte%20important.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q155);
+
+        Question q156= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Fii liniștit ","Felicitări","Foarte bine", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/foarte%20bine.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q156);
+
+        Question q157= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","De unde veniți","La revedere","Intrați vă rog", 3, "https://teratoid-photodiode.000webhostapp.com/Translate/intra%C8%9Bi%20v%C4%83%20rog.gif", Question.CATEGORY_EXPRESII);
+        addQuestion(q157);
+
+        Question q158= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Mulțumesc bine","Mă simt foarte descurajat","Mi-a plăcut foarte mult aici", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/mi-a%20pl%C4%83cut%20foarte%20mult%20aici.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q158);
+
+        Question q159= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ne vedem mai târziu","Ne înțelegem perfect","Nu am găsit", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/ne%20%C3%AEn%C8%9Belegem%20perfect.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q159);
+
+        Question q160= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Nu contează ","Nu pot să accept asta","Nu te supara", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/nu%20conteaz%C4%83.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q160);
+
+        Question q161= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Nu mă interesează ","Nu pot veni mâine","Nu sunt de-acord cu tine", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/nu%20m%C4%83%20intereseaz%C4%83.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q161);
+
+        Question q162= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Poftim ","Pot să vă cer o informație","Pot intra", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/pot%20s%C4%83%20v%C4%83%20cer%20o%20informa%C8%9Bie.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q162);
+
+        Question q163= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Sunt foarte bucuros de asta ","Sunt de-acord cu tine","Sper să ne vedem curând", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/sper%20s%C4%83%20ne%20vedem%20%C3%AEn%20curand.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q163);
+
+        Question q164= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Trebuie să refuz ","Trebuie să ne mai întâlnim","Unde este", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/trebuie%20s%C4%83%20ne%20mai%20%C3%AEnt%C3%A2lnim.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q164);
+
+        Question q165= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Vreți să mă ajutați ","Vă place aici","Vă rog", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/vre%C8%9Bi%20s%C4%83%20m%C4%83%20ajuta%C8%9Bi.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q165);
+
+        Question q166= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ați putea repeta vă rog","Aceasta este prietena mea","Vă rog", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/aceasta%20este%20prietena%20mea.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q166);
+
+        Question q167= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Așa este ","Am o rugăminte","Am să plec", 2, "https://teratoid-photodiode.000webhostapp.com/Translate/am%20o%20rug%C4%83minte.gif", Question.CATEGORY_EXPRESII);
+        addQuestion(q167);
+
+        Question q168= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Aveți dreptate ","Vă place aici","Aș vrea să știu unde pot cumpăra", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/a%C8%99%20vrea%20s%C4%83%20%C8%99tiu%20unde%20pot%20cumpara.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q168);
+
+
+        Question q169= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ce număr de telefon aveți ","Ce faceți aici","Ce mai faci", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/ce%20num%C4%83r%20de%20telefon%20ave%C8%9Bi.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q169);
+
+        Question q170= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Cine mă caută ","Cineva a fost aici","Cine a spus asta", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/cine%20m%C4%83%20caut%C4%83.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q170);
+
+        Question q171= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ce pot face pentru dvs ","Ce s-a întâmplat","Ce vârstă aveți", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/ce%20pot%20face%20pentru%20dvs.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q171);
+
+        Question q172= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Cred că da ","Cine este acolo","Cum ajung la", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/cum%20ajung%20la.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q172);
+
+        Question q173= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Cum este vremea ","Cu plăcere","Cum te simți", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/cum%20te%20sim%C8%9Bi.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q173);
+
+        Question q174= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Câți ani are el și ea","Când se deschide","Când plecați", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2nd%20se%20deschide.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q174);
+
+        Question q175= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Câți ani are el și ea ","Câți sunteți in clasă","Cât este ceasul", 1, "https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2%C8%9Bi%20ani%20are%20el%20%C8%99i%20ea.gif", Question.CATEGORY_EXPRESII);
+        addQuestion(q175);
+
+
+        Question q176= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Despre ce e vorba","Dați-mi voie să mă prezint","De la cine este", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/da%C8%9Bi-mi%20voie%20s%C4%83%20m%C4%83%20prezint.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q176);
+
+        Question q177= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","E adevărat","E deja târziu","Este posibil să fie acolo", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/e%20deja%20t%C3%A2rziu.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q177);
+
+        Question q178= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","La mulți ani ","Luați și dvs","Locul acesta este ocupat", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/locul%20acesta%20este%20ocupat.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q178);
+
+        Question q179= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Ne simțim bine ","Ne place foarte mult aici","Este foarte important", 1, "https://teratoid-photodiode.000webhostapp.com/Translate/ne%20sim%C8%9Bim%20bine.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q179);
+
+        Question q180= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Nu cred că are sens","Nu vă faceți griji","Nu prea bine", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/nu%20prea%20bine.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q180);
+
+        Question q181= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Vreți să mă ajutați ","Pe aici vă rog","Este și el acolo", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/pe%20aici%20v%C4%83%20rog.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q181);
+
+        Question q182= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Scuzați-mă sunteți domnul ","Se mai întâmplă","Sund de-acord cu tine", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/Scuza%C8%9Bi-m%C4%83%20sunte%C8%9Bi%20domnul.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q182);
+
+        Question q183= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Unde ați pus cheile","Uite aici","Unde ai fost ieri", 3, " https://teratoid-photodiode.000webhostapp.com/Translate/unde%20ai%20fost%20ieri.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q183);
+
+        Question q184= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Vreți să poftiți inauntru","Vă felicit pentru ce faceți","Vreți să mă ajutați", 1, " https://teratoid-photodiode.000webhostapp.com/Translate/vre%C8%9Bi%20s%C4%83%20pofti%C8%9Bi%20%C3%AEnauntru.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q184);
+
+        Question q185= new Question("În gif-ul urmator este reprezentată urmatoarea expresie: ","Îmi merge bine","Îți doresc mult success în activitate","În ce data suntem azi", 2, " https://teratoid-photodiode.000webhostapp.com/Translate/%C3%AE%C8%9Bi%20doresc%20mult%20succes%20%C3%AEn%20activitate.gif ", Question.CATEGORY_EXPRESII);
+        addQuestion(q185);
 
     }
 
@@ -571,7 +695,99 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question2 q20=new Question2("În ce imagine este reprezentat cuvântul  SLATINA :","https://ileanadaniela19.000webhostapp.com/Orase/Suceava.gif","https://ileanadaniela19.000webhostapp.com/Fructe/piersica.gif","https://ileanadaniela19.000webhostapp.com/Orase/Slatina.gif","https://ileanadaniela19.000webhostapp.com/Animale/Pisică.gif",3);
         addQuestion2(q20);
 
+        Question2 q21=new Question2("În ce imagine este reprezentată expresia Aceasta este prietena mea:"," https://teratoid-photodiode.000webhostapp.com/Translate/aceasta%20este%20prietena%20mea.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/acesta%20este%20colegul%20meu.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/am%20%C3%AEn%C8%9Beles.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/ave%C8%9Bi%20dreptate-1.gif",1);
+        addQuestion2(q21);
+
+        Question2 q22=new Question2("În ce imagine este reprezentată expresia Am să vă conduc:"," https://teratoid-photodiode.000webhostapp.com/Translate/a%C8%99%20dori%20s%C4%83-l%20cunosc.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/am%20s%C4%83%20v%C4%83%20conduc.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/a%C8%99a%20este.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/bine%C3%AEnteles.gif",2);
+        addQuestion2(q22);
+
+
+        Question2 q23=new Question2("În ce imagine este reprezentată expresia Ați putea repeta vă rog:"," https://teratoid-photodiode.000webhostapp.com/Translate/a%C8%9Bi%20putea%20s%C4%83%20semna%C8%9Bi%20aici%20va%20rog.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/ave%C8%9Bi%20vreo%20legitima%C8%9Bie%20la%20dvs.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/a%C8%9Bi%20putea%20repeta%20v%C4%83%20rog.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/care%20este%20problema.gif",3);
+        addQuestion2(q23);
+
+
+        Question2 q24=new Question2("În ce imagine este reprezentată expresia Care este problema:"," https://teratoid-photodiode.000webhostapp.com/Translate/bun%C4%83%20seara.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/care%20este%20problema.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/care%20este%20starea%20dvs%20civil%C4%83.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/cas%C4%83%20de%20piatr%C4%83.gif",2);
+        addQuestion2(q24);
+
+        Question2 q25=new Question2("În ce imagine este reprezentată expresia Casă de piatră:"," https://teratoid-photodiode.000webhostapp.com/Translate/ce%20cau%C8%9Bi.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/cas%C4%83%20de%20piatr%C4%83.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/ce%20dori%C8%9Bi.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/ce%20v%C3%A2rst%C4%83%20ai.gif",2);
+        addQuestion2(q25);
+
+        Question2 q26=new Question2("În ce imagine este reprezentată expresia Cred că ne-am mai întâlnit:"," https://teratoid-photodiode.000webhostapp.com/Translate/cred%20c%C4%83%20ne-am%20mai%20%C3%AEnt%C3%A2lnit.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/cum%20ajung%20la.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/Cr%C4%83ciun%20Fericit.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/cum%20te%20sim%C8%9Bi.gif ",1);
+        addQuestion2(q26);
+
+        Question2 q27=new Question2("În ce imagine este reprezentată expresia Cine mă caută:"," https://teratoid-photodiode.000webhostapp.com/Translate/ce%20v%C3%A2rst%C4%83%20ave%C8%9Bi.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/cine%20este%20acolo.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/cine%20m%C4%83%20caut%C4%83.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/ce%20dori%C8%9Bi.gif ",3);
+        addQuestion2(q27);
+
+        Question2 q28=new Question2("În ce imagine este reprezentată expresia Cum te simți"," https://teratoid-photodiode.000webhostapp.com/Translate/cum%20se%20numeste.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/cum%20te%20cheama.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/cum%20te%20sim%C8%9Bi.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/cu%20pl%C4%83cere.gif ",3);
+        addQuestion2(q28);
+
+        Question2 q29=new Question2("În ce imagine este reprezentată expresia Cum se numește:"," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2nd%20a%C8%9Bi%20venit.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/cum%20se%20numeste.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2t%20este%20ceasul.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2%C8%9Bi%20ani%20are%20el%20%C8%99i%20ea.gif ",2);
+        addQuestion2(q29);
+
+        Question2 q30=new Question2("În ce imagine este reprezentată expresia Câți ani are el si ea:"," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2t%20trebuie%20s%C4%83%20pl%C4%83tesc.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2nd%20se%20%C3%AEnchide.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2%C8%9Bi%20ani%20are%20el%20%C8%99i%20ea.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/cu%20pl%C4%83cere.gif ",3);
+        addQuestion2(q30);
+
+        Question2 q31=new Question2("În ce imagine este reprezentată expresia Dați-mi voie să mă prezint:"," https://teratoid-photodiode.000webhostapp.com/Translate/da%C8%9Bi-mi%20voie%20s%C4%83%20m%C4%83%20prezint.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/de%20la%20cine%20este.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/dragi%20prieteni.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/de-acord.gif ",1);
+        addQuestion2(q31);
+
+        Question2 q32=new Question2("În ce imagine este reprezentată expresia De unde sunteți:"," https://teratoid-photodiode.000webhostapp.com/Translate/de%20unde%20veni%C8%9Bi.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/de%20unde%20sunte%C8%9Bi.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/doamn%C4%83%20a%C8%99%20vrea%20s%C4%83%20face%C8%9Bi%20cuno%C8%99tin%C8%9B%C4%83%20cu%20prietenul%20meu%20domul.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/dup%C4%83%20tine.gif ",2);
+        addQuestion2(q32);
+
+        Question2 q33=new Question2("În ce imagine este reprezentată expresia Da sunt absolut sigur:"," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2t%20este%20ceasul.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/da%20sunt%20absolut%20sigur.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/dup%C4%83%20tine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/doamn%C4%83%20a%C8%99%20vrea%20s%C4%83%20face%C8%9Bi%20cuno%C8%99tin%C8%9B%C4%83%20cu%20prietenul%20meu%20domul.gif ",2);
+        addQuestion2(q33);
+
+        Question2 q34=new Question2("În ce imagine este reprezentată expresia E deja târziu:"," https://teratoid-photodiode.000webhostapp.com/Translate/e%20o%20idee%20bun%C4%83.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/e%20adev%C4%83rat.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/e%20deja%20t%C3%A2rziu.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/de-acord.gif ",3);
+        addQuestion2(q34);
+
+        Question2 q35=new Question2("În ce imagine este reprezentată expresia E o idee bună:"," https://teratoid-photodiode.000webhostapp.com/Translate/La%20mul%C8%9Bi%20ani.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/la%20revedere.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/fii%20lini%C8%99tit.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/e%20o%20idee%20bun%C4%83.gif ",4);
+        addQuestion2(q35);
+
+        Question2 q36=new Question2("În ce imagine este reprezentată expresia Locul acesta este ocupat:"," https://teratoid-photodiode.000webhostapp.com/Translate/locul%20acesta%20este%20ocupat.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/mi-a%20pl%C4%83cut%20foarte%20mult%20aici.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/c%C3%A2%C8%9Bi%20ani%20are%20el%20%C8%99i%20ea.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/de%20unde%20veni%C8%9Bi.gif ",1);
+        addQuestion2(q36);
+
+        Question2 q37=new Question2("În ce imagine este reprezentată expresia Mi-a plăcut foarte mult aici:","https://teratoid-photodiode.000webhostapp.com/Translate/am%20%C3%AEn%C8%9Beles.gif"," https://teratoid-photodiode.000webhostapp.com/Translate/mi-a%20pl%C4%83cut%20foarte%20mult%20aici.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/este%20posibil.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/mul%C8%9Bumesc%20bine.gif ",2);
+        addQuestion2(q37);
+
+        Question2 q38=new Question2("În ce imagine este reprezentată expresia Fii liniștit:"," https://teratoid-photodiode.000webhostapp.com/Translate/mul%C8%9Bumesc%20bine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/e%20adev%C4%83rat.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/foarte%20bine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/fii%20lini%C8%99tit.gif ",4);
+        addQuestion2(q38);
+
+        Question2 q39=new Question2("În ce imagine este reprezentată expresia Mă simt foarte descurajat:"," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20am%20g%C4%83sit.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/este%20foarte%20important.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/m%C4%83%20simt%20foarte%20descurajat.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20conteaz%C4%83.gif ",3);
+        addQuestion2(q39);
+
+        Question2 q40=new Question2("În ce imagine este reprezentată expresia Nu contează:"," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20m%C4%83%20descurc.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20am%20g%C4%83sit.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20conteaz%C4%83.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20m%C4%83%20intereseaz%C4%83.gif ",3);
+        addQuestion2(q40);
+
+        Question2 q41=new Question2("În ce imagine este reprezentată expresia Nu mă interesează:"," https://teratoid-photodiode.000webhostapp.com/Translate/pe%20aici%20v%C4%83%20rog.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20te%20supara.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20pot%20veni%20m%C3%A2ine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20m%C4%83%20intereseaz%C4%83.gif ",4);
+        addQuestion2(q41);
+
+        Question2 q42=new Question2("În ce imagine este reprezentată expresia Pe aici vă rog:"," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20v%C4%83%20face%C8%9Bi%20griji.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/pentru%20cine%20este.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/Scuza%C8%9Bi-m%C4%83%20sunte%C8%9Bi%20domnul.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/pe%20aici%20v%C4%83%20rog.gif ",4);
+        addQuestion2(q42);
+
+        Question2 q43=new Question2("În ce imagine este reprezentată expresia Scuzați-mă sunteți domnul:"," https://teratoid-photodiode.000webhostapp.com/Translate/sunt%20din.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/pot%20intra.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/Scuza%C8%9Bi-m%C4%83%20sunte%C8%9Bi%20domnul.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/sunt%20de-acord%20cu%20tine.gif ",3);
+        addQuestion2(q43);
+
+        Question2 q44=new Question2("În ce imagine este reprezentată expresia Sunt de-acord cu tine:"," https://teratoid-photodiode.000webhostapp.com/Translate/sunt%20de-acord%20cu%20tine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/sunt%20foarte%20bine%20mul%C8%9Bumesc.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/spune%C8%9Bi-mi%20v%C4%83%20rog%20c%C3%A2nd%20%C8%99i%20unde%20ne%20putem%20%C3%AEnt%C3%A2lni.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/sper%20s%C4%83%20ne%20vedem%20%C3%AEn%20curand.gif ",1);
+        addQuestion2(q44);
+
+        Question2 q45=new Question2("În ce imagine este reprezentată expresia Sper să ne vedem curând:"," https://teratoid-photodiode.000webhostapp.com/Translate/nu%20v%C4%83%20face%C8%9Bi%20griji.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/trebuie%20s%C4%83%20ne%20mai%20%C3%AEnt%C3%A2lnim.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/petrecere%20frumoas%C4%83.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/sper%20s%C4%83%20ne%20vedem%20%C3%AEn%20curand.gif ",4);
+        addQuestion2(q45);
+
+        Question2 q46=new Question2("În ce imagine este reprezentată expresia Trebuie să ne mai întâlnim:"," https://teratoid-photodiode.000webhostapp.com/Translate/trebuie%20s%C4%83%20ne%20mai%20%C3%AEnt%C3%A2lnim.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/voi%20doi%20v-a%C8%9Bi%20cunoscut.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/sunt%20foarte%20bine%20mul%C8%9Bumesc.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/locul%20acesta%20este%20ocupat.gif ",1);
+        addQuestion2(q46);
+
+        Question2 q47=new Question2("În ce imagine este reprezentată expresia Vă rog poftiți înauntru:"," https://teratoid-photodiode.000webhostapp.com/Translate/vre%C8%9Bi%20s%C4%83%20pofti%C8%9Bi%20%C3%AEnauntru.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/v%C4%83%20rog%20s%C4%83-i%20transmite%C8%9Bi%20complimente.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C3%AEmi%20merge%20bine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C8%99tiu%20ca%20e%20adevarat.gif ",1);
+        addQuestion2(q47);
+
+        Question2 q48=new Question2("În ce imagine este reprezentată expresia Știu că e adevărat:"," https://teratoid-photodiode.000webhostapp.com/Translate/sunt%20foarte%20bine%20mul%C8%9Bumesc.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C3%AEn%20ce%20dat%C4%83%20suntem%20azi.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/v%C4%83%20place%20aici.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C8%99tiu%20ca%20e%20adevarat.gif ",4);
+        addQuestion2(q48);
+
+        Question2 q49=new Question2("În ce imagine este reprezentată expresia În ce data suntem azi:"," https://teratoid-photodiode.000webhostapp.com/Translate/v%C4%83%20felicit%20pentru%20logodna%20dvs.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/trebuie%20s%C4%83%20refuz.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C3%AEn%20ce%20dat%C4%83%20suntem%20azi.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C8%99tiu%20ca%20e%20adevarat.gif ",3);
+        addQuestion2(q49);
+
+        Question2 q50=new Question2("În ce imagine este reprezentată expresia Îmi convine foarte bine:"," https://teratoid-photodiode.000webhostapp.com/Translate/este%20foarte%20important.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C3%AEmi%20merge%20bine.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/v%C4%83%20rog%20s%C4%83%20completa%C8%9Bi%20acest%20formular.gif "," https://teratoid-photodiode.000webhostapp.com/Translate/%C3%AEmi%20convine%20foarte%20bine.gif ",4);
+        addQuestion2(q50);
     }
+
     private void addQuestion(Question question) {
         ContentValues cv = new ContentValues();
         cv.put(QuizContract.QuestionsTable.COLUMN_QUESTION, question.getQuestion());
@@ -645,6 +861,32 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         return questionList;
     }
 
+    public ArrayList<Question> getQuestionsByCategoryRandom(String category) {
+        ArrayList<Question> questionList = new ArrayList<>();
+        db = getReadableDatabase();
+
+        String sql="SELECT * FROM " + QuizContract.QuestionsTable.TABLE_NAME +
+                " WHERE " + QuizContract.QuestionsTable.COLUMN_CATEGORY + " = '"+category +"' ORDER BY RANDOM() LIMIT 15";
+        String[] selectionArgs = new String[]{category};
+        Cursor c = db.rawQuery(sql, null);
+
+        if (c.moveToFirst()) {
+            do {
+                Question question = new Question();
+                question.setQuestion(c.getString(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_QUESTION)));
+                question.setOption1(c.getString(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_OPTION1)));
+                question.setOption2(c.getString(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_OPTION2)));
+                question.setOption3(c.getString(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_OPTION3)));
+                question.setAnswerNr(c.getInt(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_ANSWER_NR)));
+                question.setUrlImage(c.getString(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_ULRIMAGE)));
+                question.setCategory(c.getString(c.getColumnIndex(QuizContract.QuestionsTable.COLUMN_CATEGORY)));
+                questionList.add(question);
+            } while (c.moveToNext());
+        }
+
+        c.close();
+        return questionList;
+    }
     public ArrayList<Question2> getQuestionQuizAvansat(){
         ArrayList<Question2> questionList = new ArrayList<>();
         db = getReadableDatabase();

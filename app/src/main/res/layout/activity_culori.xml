@@ -48,7 +48,7 @@
 
                 <Button
 
-                    android:text="Previous"
+                    android:text="Înapoi"
                     android:layout_weight="1"
                     android:id="@+id/buttonPrev"
                     android:background="@drawable/btnsignstyle"
@@ -61,7 +61,7 @@
                     android:textColor="#fff"/>
 
                 <Button
-                    android:text="Next"
+                    android:text="Înainte"
                     android:layout_weight="1"
                     android:id="@+id/buttonNext"
                     android:background="@drawable/btnsignstyle"

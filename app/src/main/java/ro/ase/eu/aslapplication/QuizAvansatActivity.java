@@ -34,7 +34,7 @@ import ro.ase.eu.aslapplication.intrebariQuiz.WebViewAdapter;
 public class QuizAvansatActivity extends BaseActivity {
 
     public static final String EXTRA_SCORE2 = "extraScore";
-    private static final long COUNTDOWN_IN_MILLIS2 = 60000;
+    private static final long COUNTDOWN_IN_MILLIS2 = 40000;
 
     private static final String KEY_SCORE2 = "keyScore";
     private static final String KEY_QUESTION_COUNT2 = "keyQuestionCount";
@@ -262,14 +262,13 @@ public class QuizAvansatActivity extends BaseActivity {
         }
 
         if (questionCounter < questionCountTotal) {
-            buttonConfirmNext.setText("Next");
+            buttonConfirmNext.setText("Înainte");
         } else {
-            buttonConfirmNext.setText("Finish");
-            UserRegisterScore(LoginActivity.EmailHolder,score,"Toate categoriile");
+            buttonConfirmNext.setText("Terminare");
             AlertDialog.Builder builder=new AlertDialog.Builder(QuizAvansatActivity.this);
-
+            UserRegisterScore(LoginActivity.EmailHolder,score,category);
             builder.setTitle("Scor");
-            builder.setMessage("Ați răspuns corect la : "+score + "întrebări");
+            builder.setMessage("Ați răspuns corect la : "+ score + " întrebări");
             builder.setPositiveButton("OK",null);
             builder.setIcon(R.drawable.ic_alert);
             AlertDialog dialog=builder.create();

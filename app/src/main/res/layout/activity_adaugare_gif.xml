@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/log"
     android:orientation="vertical"
-    tools:context="ro.ase.eu.aslapplication.SettingsAccount">
+    tools:context="ro.ase.eu.aslapplication.AdaugareGifActivity">
+
+
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="370dp"
@@ -14,69 +16,62 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         card_view:cardCornerRadius="4dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvNumeSetting"
+                android:id="@+id/tvNumeActivitate"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Setări cont"
+                android:text="Adăugare gif în dicționar"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etNameSetting"
-                android:layout_width="260dp"
+                android:id="@+id/etNumeExpresie"
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/etsignupstyle"
-                android:hint="Nume" />
+                android:hint="Nume expresie/cuvânt.." />
 
             <EditText
-                android:id="@+id/etEmailSetting"
-                android:layout_width="260dp"
+                android:id="@+id/etUrlExpresie"
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/etsignupstyle"
-                android:hint="Email" />
+                android:hint="Url expresie.." />
 
-            <EditText
-                android:id="@+id/etPassSetting"
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/etsignupstyle"
-                android:hint="Parolă"
-                />
 
-            <EditText
-                android:id="@+id/etConfPassSetting"
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/etsignupstyle"
-                android:hint="Confirmare parolă"
-                />
+            <WebView
+                android:id="@+id/wvPreview"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1" />
 
             <Button
-                android:background="@drawable/btnsignstyle"
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnAdaugaGif"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:text="Modificare"
-                android:textColor="#fff"/>
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btnsignstyle"
+                android:text="Adăugare"
+                android:textColor="#fff" />
+
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>
+

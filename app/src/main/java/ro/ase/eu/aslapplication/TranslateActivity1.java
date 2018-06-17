@@ -172,29 +172,6 @@ public class TranslateActivity1 extends BaseActivity implements expresieListener
         gse.execute(text);
     }
 
-    /*private static class ObiecteTimer{
-        private final ArrayList<Expresie> path;
-        private final Integer durata;
-
-        private ObiecteTimer(ArrayList<Expresie> path, Integer durata) {
-            this.path = path;
-            this.durata = durata;
-        }
-
-        public ArrayList<Expresie> getPath() {
-            return path;
-        }
-
-        public Integer getDurata() {
-            return durata;
-        }
-    }
-    private static final List<ObiecteTimer> obiecteTimer =new ArrayList<ObiecteTimer>();
-    static{
-
-    }*/
-
-
     @Override
        public void onSucces(ArrayList<Expresie> array) {
         if(array.size()==1) {
@@ -215,11 +192,11 @@ public class TranslateActivity1 extends BaseActivity implements expresieListener
                         stop=true;
                     }
                     if(!stop){
-                        handler.postDelayed(this,6000);
+                        handler.postDelayed(this,4000);
                     }
                 }
             };
-            handler.postDelayed(runnable,1000);
+            handler.postDelayed(runnable,600);
         }
     }
 

@@ -70,7 +70,6 @@ public class AnimaleActivity extends BaseActivity {
             }
         });
     }
-
     private void extractJSON(){
         try {
             JSONObject jsonObject = new JSONObject(imagesJSON);
@@ -79,7 +78,6 @@ public class AnimaleActivity extends BaseActivity {
             e.printStackTrace();
         }
     }
-
     private void showImage(){
         try {
             JSONObject jsonObject = arrayImages.getJSONObject(TRACK);
@@ -89,14 +87,12 @@ public class AnimaleActivity extends BaseActivity {
             e.printStackTrace();
         }
     }
-
     private void moveNext(){
         if(TRACK < arrayImages.length()){
             TRACK++;
             showImage();
         }
     }
-
     private void movePrevious(){
         if(TRACK>0){
             TRACK--;
@@ -114,7 +110,6 @@ public class AnimaleActivity extends BaseActivity {
                 super.onPreExecute();
                 loading = ProgressDialog.show(AnimaleActivity.this, "Încărcare imagini...","Vă rugăm asteptați...",true,true);
             }
-
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
@@ -123,7 +118,6 @@ public class AnimaleActivity extends BaseActivity {
                 extractJSON();
                 showImage();
             }
-
             @Override
             protected String doInBackground(String... params) {
                 String uri = params[0];
@@ -132,14 +126,11 @@ public class AnimaleActivity extends BaseActivity {
                     URL url = new URL(uri);
                     HttpURLConnection con = (HttpURLConnection) url.openConnection();
                     StringBuilder sb = new StringBuilder();
-
                     bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
                     String json;
                     while((json = bufferedReader.readLine())!= null){
                         sb.append(json+"\n");
                     }
-
                     return sb.toString().trim();
 
                 }catch(Exception e){

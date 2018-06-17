@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ASLapplication</string>
+    <string name="app_name">Limbajul mimico-gestual</string>
     <string name="title_activity_nav">NavActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -23,15 +23,17 @@
     <string name="food">Mâncare</string>
     <string name="cities">Orașe</string>
     <string name="drinks">Băuturi</string>
-    <string name="about">About</string>
+    <string name="about">Despre aplicație</string>
 
     <string name="buttonUsor">Start quiz nivel incepator</string>
     <string name="buttonGreu">Start quiz nivel avansat</string>
+    <string name="buttonAltQuiz">Start quiz nivel expresii</string>
 
     <string name="textUsor">Acest nivel conține quiz-uri din categoriile : alfabet și litere, mâncare, fructe, legume, culori, familie, locuri, băuturi.
     Alegeți categoria :
     </string>
-    <string name="textGreu">Acest nivel contine întrebări din toate categoriile existente și expresiile din dicționar.</string>
+    <string name="textGreu">Acest nivel conține întrebări din toate categoriile existente și expresiile din dicționar.</string>
+    <string name="textAltQuiz">Acest nivel conține întrebări numai din expresii.</string>
 
     <string name="textPrezentare">Salut, numele meu este Ileana Daniela Gheorghe. Sunt studentă în anul III la Facultatea de Cibernetică, Statistică și Informatică Economică,
         specializarea Informatică Economică, și aceasta este lucrarea mea de licență.

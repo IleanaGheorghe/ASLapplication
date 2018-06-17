@@ -28,8 +28,6 @@ public class InputValidation {
         }
         return true;
     }
-
-
     public boolean isInputEditTextEmail(EditText editText, String message) {
         String value = editText.getText().toString().trim();
         if (value.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(value).matches()) {
@@ -40,7 +38,6 @@ public class InputValidation {
         }
         return true;
     }
-
     public boolean isInputEditTextMatches(EditText editText1,EditText editText2, String message) {
         String value1 = editText1.getText().toString().trim();
         String value2 = editText2.getText().toString().trim();
