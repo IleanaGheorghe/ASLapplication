@@ -90,30 +90,6 @@ public class TranslateActivity1 extends BaseActivity implements expresieListener
         });
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_share, menu);
-        getMenuInflater().inflate(R.menu.meniucomun, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int itemId = item.getItemId();
-
-        if (itemId == R.id.share) {
-            shareContent();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-    private void shareContent() {
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, urlImagine);
-        startActivity(Intent.createChooser(shareIntent,String.valueOf("How do you want to share")));
-    }
-
     private void startVoiceInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -140,6 +116,29 @@ public class TranslateActivity1 extends BaseActivity implements expresieListener
             }
 
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_share, menu);
+        getMenuInflater().inflate(R.menu.meniucomun, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.share) {
+            shareContent();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    private void shareContent() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, urlImagine);
+        startActivity(Intent.createChooser(shareIntent,String.valueOf("Prin ce aplicație doriți să trimiteți: ")));
     }
 
     private void getSearchExpression(final String text){

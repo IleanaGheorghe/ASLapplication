@@ -96,13 +96,9 @@ public class QuizCategoryActivity extends BaseActivity {
 
         textColorDefaultRb = rb1.getTextColors();
         textColorDefaultCd = textViewCountDown.getTextColors();
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         Intent intent = getIntent();
-
         category = intent.getStringExtra(GamesActivity.EXTRA_CATEGORY);
-
         textViewCategory.setText("Categorie : " + category);
 
 
@@ -129,7 +125,6 @@ public class QuizCategoryActivity extends BaseActivity {
                 showSolution();
             }
         }
-
         buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +132,7 @@ public class QuizCategoryActivity extends BaseActivity {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
                         checkAnswer();
                     } else {
-                        Toast.makeText(QuizCategoryActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizCategoryActivity.this, "Vă rugăm alegeți un răspuns.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     showNextQuestion();
@@ -154,18 +149,15 @@ public class QuizCategoryActivity extends BaseActivity {
 
         if (questionCounter < questionCountTotal) {
             currentQuestion = questionList.get(questionCounter);
-
             textViewQuestion.setText(currentQuestion.getQuestion());
             webViewQuiz.loadUrl(currentQuestion.getUrlImage());
             rb1.setText(currentQuestion.getOption1());
             rb2.setText(currentQuestion.getOption2());
             rb3.setText(currentQuestion.getOption3());
-
             questionCounter++;
             textViewQuestionCount.setText("Intrebare: " + questionCounter + "/" + questionCountTotal);
             answered = false;
             buttonConfirmNext.setText("Confirm");
-
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
         } else {
@@ -180,7 +172,6 @@ public class QuizCategoryActivity extends BaseActivity {
                 timeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
             }
-
             @Override
             public void onFinish() {
                 timeLeftInMillis = 0;
@@ -195,9 +186,7 @@ public class QuizCategoryActivity extends BaseActivity {
         int seconds = (int) (timeLeftInMillis / 1000) % 60;
 
         String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
-
         textViewCountDown.setText(timeFormatted);
-
         if (timeLeftInMillis < 10000) {
             textViewCountDown.setTextColor(Color.RED);
         } else {
@@ -225,7 +214,6 @@ public class QuizCategoryActivity extends BaseActivity {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
-
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
@@ -240,7 +228,6 @@ public class QuizCategoryActivity extends BaseActivity {
                 textViewQuestion.setText("Raspunsul 3 este corect");
                 break;
         }
-
         if (questionCounter < questionCountTotal) {
             buttonConfirmNext.setText("Înainte");
         } else {

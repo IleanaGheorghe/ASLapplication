@@ -104,7 +104,9 @@
             android:enabled="true"
             android:process=":remote" />
 
-        <service android:name=".clase.AlarmService1" />
+        <service
+            android:name=".clase.AlarmService1"
+            android:enabled="true"/>
 
         <activity
             android:name=".QuizCategoryActivity"

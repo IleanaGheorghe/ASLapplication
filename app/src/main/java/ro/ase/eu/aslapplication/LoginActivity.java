@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     static String PasswordHolder;
     static String EmailHolder;
     String finalResult ;
-    String HttpURL = "http://ileanadaniela19.000webhostapp.com/LoginRegister/UserLogin.php";
+    String HttpURL = "https://ileanadaniela19.000webhostapp.com/LoginRegister/UserLogin.php";
     Boolean CheckEditText ;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
@@ -55,28 +55,14 @@ public class LoginActivity extends AppCompatActivity {
         tvCreate=(TextView)findViewById(R.id.tvCreate);
         rememberMe=(CheckBox) findViewById(R.id.checkBox);
 
+        dailyNotif();
         if (!new PrefManager(this).isUserLogedOut()) {
             //user's email and password both are saved in preferences
             EmailHolder=new PrefManager(this).getEmail();
+            dailyNotif();
             startHomeActivity();
         }
 
-        long t=System.currentTimeMillis();
-        Calendar alarmStartTime = Calendar.getInstance();
-        alarmStartTime.set(Calendar.HOUR_OF_DAY, 10);
-        alarmStartTime.set(Calendar.MINUTE, 00);
-        alarmStartTime.set(Calendar.SECOND, 0);
-
-        if(t<=alarmStartTime.getTimeInMillis()) {
-            AlarmManager alarmManager = (AlarmManager) getSystemService(LoginActivity.this.ALARM_SERVICE);
-            Intent alarmIntent = new Intent(LoginActivity.this, AlarmReceiver1.class);
-
-            pendingIntent = PendingIntent.getBroadcast(LoginActivity.this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-            alarmManager.set(AlarmManager.RTC_WAKEUP,alarmStartTime.getTimeInMillis(),pendingIntent);
-            //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-
-        }
         inputValidation =new InputValidation(LoginActivity.this);
         btnLog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,6 +143,24 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void dailyNotif(){
+        long t=System.currentTimeMillis();
+        Calendar alarmStartTime = Calendar.getInstance();
+        alarmStartTime.set(Calendar.HOUR_OF_DAY, 9);
+        alarmStartTime.set(Calendar.MINUTE, 00);
+        alarmStartTime.set(Calendar.SECOND, 0);
+
+        if(t<=alarmStartTime.getTimeInMillis()) {
+            AlarmManager alarmManager = (AlarmManager) getSystemService(LoginActivity.this.ALARM_SERVICE);
+            Intent alarmIntent = new Intent(LoginActivity.this, AlarmReceiver1.class);
+
+            pendingIntent = PendingIntent.getBroadcast(LoginActivity.this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            //alarmManager.set(AlarmManager.RTC_WAKEUP,alarmStartTime.getTimeInMillis(),pendingIntent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, alarmStartTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+
+        }
+    }
 
     public void UserLoginFunction(final String email, final String password){
 

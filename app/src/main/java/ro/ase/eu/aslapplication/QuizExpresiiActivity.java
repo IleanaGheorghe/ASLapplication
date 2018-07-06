@@ -137,7 +137,7 @@ public class QuizExpresiiActivity extends BaseActivity {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked()) {
                         checkAnswer();
                     } else {
-                        Toast.makeText(QuizExpresiiActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizExpresiiActivity.this, "Vă rugăm alegeți un răspuns.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     showNextQuestion();
@@ -207,25 +207,19 @@ public class QuizExpresiiActivity extends BaseActivity {
 
     private void checkAnswer() {
         answered = true;
-
         countDownTimer.cancel();
-
         RadioButton rbSelected = (RadioButton) findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
-
         if (answerNr == currentQuestion.getAnswerNr()) {
             score++;
             textViewScore.setText("Scor: " + score);
         }
-
         showSolution();
     }
-
     private void showSolution() {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
-
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
@@ -240,12 +234,10 @@ public class QuizExpresiiActivity extends BaseActivity {
                 textViewQuestion.setText("Raspunsul 3 este corect");
                 break;
         }
-
         if (questionCounter < questionCountTotal) {
             buttonConfirmNext.setText("Înainte");
         } else {
             buttonConfirmNext.setText("Terminare");
-
             Log.e("Categorie",category);
             UserRegisterScore(LoginActivity.EmailHolder,score,category);
             AlertDialog.Builder builder=new AlertDialog.Builder(QuizExpresiiActivity.this);

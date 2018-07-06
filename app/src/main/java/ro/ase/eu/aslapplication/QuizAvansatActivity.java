@@ -144,7 +144,7 @@ public class QuizAvansatActivity extends BaseActivity {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()) {
                         checkAnswer();
                     } else {
-                        Toast.makeText(QuizAvansatActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizAvansatActivity.this, "Vă rugăm alegeți un răspuns.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     showNextQuestion();
